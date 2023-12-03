@@ -1,0 +1,889 @@
+Started by user admin
+Obtained Jenkinsfile from git https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP2.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP2.git # timeout=10
+Fetching upstream changes from https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP2.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.42.0'
+ > git fetch --tags --force --progress -- https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP2.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 3736b8359ed97520601b9a84d81c024823054319 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 3736b8359ed97520601b9a84d81c024823054319 # timeout=10
+Commit message: "Update Jenkinsfile"
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Prepare Environment)
+[Pipeline] echo
+Initialize Environment
+[Pipeline] withCredentials
+Masking supported pattern matches of $dockerPassword
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Code Checkout)
+[Pipeline] catchError
+[Pipeline] {
+[Pipeline] echo
+Code Checkout
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP2.git # timeout=10
+Fetching upstream changes from https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP2.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.42.0'
+ > git fetch --tags --force --progress -- https://github.com/Lakan-Ilaw/ERCLI_CapstoneProject_CEP2.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 3736b8359ed97520601b9a84d81c024823054319 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 3736b8359ed97520601b9a84d81c024823054319 # timeout=10
+Commit message: "Update Jenkinsfile"
+[Pipeline] }
+[Pipeline] // catchError
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Maven Build)
+[Pipeline] echo
+Maven Build
+[Pipeline] sh
++ mvn clean package
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mcom.coding.exercise:bank-app[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding BankApp 1.0.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:3.1.0:clean[m [1m(default-clean)[m @ [36mbank-app[0;1m ---[m
+[[1;34mINFO[m] Deleting /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mbank-app[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 0 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36mbank-app[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 26 source files to /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mbank-app[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 9 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36mbank-app[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.1:test[m [1m(default-test)[m @ [36mbank-app[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running com.coding.exercise.bankapp.[1mBankingApplicationTests[m
+20:49:43.875 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.coding.exercise.bankapp.BankingApplicationTests]
+20:49:43.881 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+20:49:43.891 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+20:49:43.909 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.coding.exercise.bankapp.BankingApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+20:49:43.921 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.coding.exercise.bankapp.BankingApplicationTests], using SpringBootContextLoader
+20:49:43.924 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.coding.exercise.bankapp.BankingApplicationTests]: class path resource [com/coding/exercise/bankapp/BankingApplicationTests-context.xml] does not exist
+20:49:43.925 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.coding.exercise.bankapp.BankingApplicationTests]: class path resource [com/coding/exercise/bankapp/BankingApplicationTestsContext.groovy] does not exist
+20:49:43.925 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.coding.exercise.bankapp.BankingApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:49:43.926 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.coding.exercise.bankapp.BankingApplicationTests]: BankingApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:49:43.985 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.coding.exercise.bankapp.BankingApplicationTests]
+20:49:44.054 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/target/classes/com/coding/exercise/bankapp/BankingApplication.class]
+20:49:44.057 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.coding.exercise.bankapp.BankingApplication for test class com.coding.exercise.bankapp.BankingApplicationTests
+20:49:44.152 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.coding.exercise.bankapp.BankingApplicationTests]: using defaults.
+20:49:44.152 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+20:49:44.187 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4efac082, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6bd61f98, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@48aca48b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@13fd2ccd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b9b00e0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@506ae4d4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7d4f9aae, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@72e5a8e, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@54e1c68b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@53aac487, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@52b1beb6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@273e7444, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7db12bb6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@783a467b]
+20:49:44.189 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.coding.exercise.bankapp.BankingApplicationTests]
+20:49:44.190 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.coding.exercise.bankapp.BankingApplicationTests]
+20:49:44.191 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.coding.exercise.bankapp.BankingApplicationTests]
+20:49:44.191 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.coding.exercise.bankapp.BankingApplicationTests]
+20:49:44.192 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.coding.exercise.bankapp.BankingApplicationTests]
+20:49:44.192 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.coding.exercise.bankapp.BankingApplicationTests]
+20:49:44.198 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@1c7696c6 testClass = BankingApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@60099951 testClass = BankingApplicationTests, locations = '{}', classes = '{class com.coding.exercise.bankapp.BankingApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3c72f59f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@16e7dcfd, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@47542153, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@7ee955a8], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+20:49:44.203 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.coding.exercise.bankapp.BankingApplicationTests]
+20:49:44.203 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.coding.exercise.bankapp.BankingApplicationTests]
+20:49:44.252 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.4.RELEASE)
+
+2023-12-02 20:49:44.741  INFO 60273 --- [           main] c.c.e.bankapp.BankingApplicationTests    : Starting BankingApplicationTests on ip-172-31-31-58 with PID 60273 (started by jenkins in /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2)
+2023-12-02 20:49:44.744  INFO 60273 --- [           main] c.c.e.bankapp.BankingApplicationTests    : No active profile set, falling back to default profiles: default
+2023-12-02 20:49:46.354  INFO 60273 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2023-12-02 20:49:46.435  INFO 60273 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71ms. Found 4 repository interfaces.
+2023-12-02 20:49:47.105  INFO 60273 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d85108e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-02 20:49:47.413  INFO 60273 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-02 20:49:47.639  INFO 60273 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-02 20:49:47.732  INFO 60273 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-12-02 20:49:47.790  INFO 60273 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2023-12-02 20:49:47.791  INFO 60273 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2023-12-02 20:49:47.912  INFO 60273 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-12-02 20:49:48.047  INFO 60273 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-12-02 20:49:48.934  INFO 60273 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@452e2210'
+2023-12-02 20:49:48.936  INFO 60273 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-02 20:49:50.149  WARN 60273 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-02 20:49:50.842  INFO 60273 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-12-02 20:49:51.042  INFO 60273 --- [           main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2023-12-02 20:49:51.507  INFO 60273 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-12-02 20:49:52.007  INFO 60273 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69bdcfbc, org.springframework.security.web.context.SecurityContextPersistenceFilter@394a7390, org.springframework.security.web.header.HeaderWriterFilter@6f87bc6c, org.springframework.security.web.authentication.logout.LogoutFilter@7d3b4646, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56589f00, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@533165e7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4cb45048, org.springframework.security.web.session.SessionManagementFilter@58d635de, org.springframework.security.web.access.ExceptionTranslationFilter@6153aca1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@276e5add]
+2023-12-02 20:49:52.219  INFO 60273 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2023-12-02 20:49:52.247  INFO 60273 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2023-12-02 20:49:52.280  INFO 60273 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2023-12-02 20:49:52.494  INFO 60273 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_1
+2023-12-02 20:49:52.496  INFO 60273 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_2
+2023-12-02 20:49:52.497  INFO 60273 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: handleUsingGET_3
+2023-12-02 20:49:52.524  INFO 60273 --- [           main] c.c.e.bankapp.BankingApplicationTests    : Started BankingApplicationTests in 8.26 seconds (JVM running for 9.313)
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.02 s - in com.coding.exercise.bankapp.[1mBankingApplicationTests[m
+2023-12-02 20:49:52.714  INFO 60273 --- [       Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-12-02 20:49:52.728  INFO 60273 --- [       Thread-2] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-02 20:49:52.732  INFO 60273 --- [       Thread-2] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-12-02 20:49:52.762  INFO 60273 --- [       Thread-2] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2023-12-02 20:49:52.762  INFO 60273 --- [       Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-02 20:49:52.765  INFO 60273 --- [       Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.1.1:jar[m [1m(default-jar)[m @ [36mbank-app[0;1m ---[m
+[[1;34mINFO[m] Building jar: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/target/bank-app-1.0.0.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:2.1.4.RELEASE:repackage[m [1m(repackage)[m @ [36mbank-app[0;1m ---[m
+[[1;34mINFO[m] Replacing main artifact with repackaged archive
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  15.529 s
+[[1;34mINFO[m] Finished at: 2023-12-02T20:49:53Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker Image Build)
+[Pipeline] echo
+Creating Docker image
+[Pipeline] sh
++ docker build -t lakanilaw/ercli-bankingapp-cep2:1 --pull --no-cache .
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 155B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [auth] library/openjdk:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/openjdk:11
+#4 DONE 0.1s
+
+#5 [1/2] FROM docker.io/library/openjdk:11@sha256:99bac5bf83633e3c7399aed725c8415e7b569b54e03e4599e580fc9cdb7c21ab
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 47.23MB 0.4s done
+#6 DONE 0.4s
+
+#7 [2/2] COPY target/*.jar app.jar
+#7 DONE 0.7s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 0.2s done
+#8 writing image sha256:4545ee56b3185b900f57fb5827ff91fefa7747d824cea06464c8765b8b9da9d3 done
+#8 naming to docker.io/lakanilaw/ercli-bankingapp-cep2:1 done
+#8 DONE 0.2s
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Check Docker Image in DockerHub)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ docker pull lakanilaw/ercli-bankingapp-cep2:1
+Error response from daemon: manifest for lakanilaw/ercli-bankingapp-cep2:1 not found: manifest unknown: manifest unknown
++ echo failed
+[Pipeline] echo
+Image lakanilaw/ercli-bankingapp-cep2:1 does not exist yet in DockerHub. Proceeding to the next stage.
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Publishing Image to DockerHub)
+[Pipeline] echo
+Pushing the docker image to DockerHub
+[Pipeline] withCredentials
+Masking supported pattern matches of $dockerPassword
+[Pipeline] {
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [dockerPassword]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ docker login -u lakanilaw -p ****
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /var/lib/jenkins/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[Pipeline] sh
++ docker push lakanilaw/ercli-bankingapp-cep2:1
+The push refers to repository [docker.io/lakanilaw/ercli-bankingapp-cep2]
+60832a253008: Preparing
+7b7f3078e1db: Preparing
+826c3ddbb29c: Preparing
+b626401ef603: Preparing
+9b55156abf26: Preparing
+293d5db30c9f: Preparing
+03127cdb479b: Preparing
+9c742cd6c7a5: Preparing
+03127cdb479b: Waiting
+9c742cd6c7a5: Waiting
+293d5db30c9f: Waiting
+9b55156abf26: Mounted from lakanilaw/ercli-asi-insurance_test10
+b626401ef603: Mounted from lakanilaw/ercli-asi-insurance_test10
+826c3ddbb29c: Mounted from lakanilaw/ercli-asi-insurance_cep1
+7b7f3078e1db: Mounted from lakanilaw/ercli-asi-insurance_test10
+293d5db30c9f: Mounted from lakanilaw/ercli-asi-insurance_test10
+03127cdb479b: Mounted from lakanilaw/ercli-asi-insurance_test10
+9c742cd6c7a5: Mounted from lakanilaw/ercli-asi-insurance_test10
+60832a253008: Pushed
+1: digest: sha256:8f7e2b82afb1f492f5dd2d1261f92274f12c9d95f12c79b8142a17921f11fd14 size: 2007
+[Pipeline] echo
+Image push complete
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deleting Local Docker Image)
+[Pipeline] echo
+Deleting the docker image from the local machine
+[Pipeline] sh
++ docker rmi lakanilaw/ercli-bankingapp-cep2:1
+Untagged: lakanilaw/ercli-bankingapp-cep2:1
+Untagged: lakanilaw/ercli-bankingapp-cep2@sha256:8f7e2b82afb1f492f5dd2d1261f92274f12c9d95f12c79b8142a17921f11fd14
+Deleted: sha256:4545ee56b3185b900f57fb5827ff91fefa7747d824cea06464c8765b8b9da9d3
+[Pipeline] echo
+Image deletion complete
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Terraform Initialization & Planning)
+[Pipeline] echo
+Initializing Terraform
+[Pipeline] sh
++ terraform init
+
+[0m[1mInitializing the backend...[0m
+
+[0m[1mInitializing provider plugins...[0m
+- Reusing previous version of hashicorp/null from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/null v3.2.2
+- Using previously-installed hashicorp/aws v5.29.0
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+[Pipeline] echo
+Terraform Planning
+[Pipeline] sh
++ terraform plan
+[0m[1mdata.aws_vpcs.ercli_vpc: Reading...[0m[0m
+[0m[1mdata.aws_vpcs.ercli_vpc: Read complete after 0s [id=us-east-1][0m
+[0m[1mdata.aws_subnet.ercli_subnet: Reading...[0m[0m
+[0m[1maws_security_group.ERCLI_CP2_Security_Group: Refreshing state... [id=sg-0f504cd8d2f145f39][0m
+[0m[1mdata.aws_subnet.ercli_subnet: Read complete after 0s [id=subnet-01aedcdc49f8b2d2b][0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[0]: Refreshing state... [id=i-0d2c7a270b1333b5e][0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[1]: Refreshing state... [id=i-09994c27afc37a9cc][0m
+[0m[1mnull_resource.EC2_Connectivity_Check[0]: Refreshing state... [id=2503890753166198804][0m
+[0m[1mnull_resource.EC2_Connectivity_Check[1]: Refreshing state... [id=5435192287694293851][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.ERCLI_CP2_Ubuntu[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ERCLI_CP2_Ubuntu" {
+      [32m+[0m[0m ami                                  = "ami-06aa3f7caf3a30282"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t2.medium"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = "ERCLI_CEP2_Key"
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = "subnet-01aedcdc49f8b2d2b"
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Name" = "ERCLI_CP2_Ubuntu1"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Name" = "ERCLI_CP2_Ubuntu1"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = [
+          [32m+[0m[0m "sg-0f504cd8d2f145f39",
+        ]
+    }
+
+[1m  # aws_instance.ERCLI_CP2_Ubuntu[1][0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ERCLI_CP2_Ubuntu" {
+      [32m+[0m[0m ami                                  = "ami-06aa3f7caf3a30282"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t2.medium"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = "ERCLI_CEP2_Key"
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = "subnet-01aedcdc49f8b2d2b"
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Name" = "ERCLI_CP2_Ubuntu2"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Name" = "ERCLI_CP2_Ubuntu2"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = [
+          [32m+[0m[0m "sg-0f504cd8d2f145f39",
+        ]
+    }
+
+[1mPlan:[0m 2 to add, 0 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+[Pipeline] echo
+Terraform Initialization complete
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Terraform Application)
+[Pipeline] echo
+Applying Terraform configuration
+[Pipeline] sh
++ terraform apply --auto-approve
+[0m[1mdata.aws_vpcs.ercli_vpc: Reading...[0m[0m
+[0m[1mdata.aws_vpcs.ercli_vpc: Read complete after 0s [id=us-east-1][0m
+[0m[1mdata.aws_subnet.ercli_subnet: Reading...[0m[0m
+[0m[1maws_security_group.ERCLI_CP2_Security_Group: Refreshing state... [id=sg-0f504cd8d2f145f39][0m
+[0m[1mdata.aws_subnet.ercli_subnet: Read complete after 0s [id=subnet-01aedcdc49f8b2d2b][0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[0]: Refreshing state... [id=i-0d2c7a270b1333b5e][0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[1]: Refreshing state... [id=i-09994c27afc37a9cc][0m
+[0m[1mnull_resource.EC2_Connectivity_Check[1]: Refreshing state... [id=5435192287694293851][0m
+[0m[1mnull_resource.EC2_Connectivity_Check[0]: Refreshing state... [id=2503890753166198804][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.ERCLI_CP2_Ubuntu[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ERCLI_CP2_Ubuntu" {
+      [32m+[0m[0m ami                                  = "ami-06aa3f7caf3a30282"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t2.medium"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = "ERCLI_CEP2_Key"
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = "subnet-01aedcdc49f8b2d2b"
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Name" = "ERCLI_CP2_Ubuntu1"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Name" = "ERCLI_CP2_Ubuntu1"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = [
+          [32m+[0m[0m "sg-0f504cd8d2f145f39",
+        ]
+    }
+
+[1m  # aws_instance.ERCLI_CP2_Ubuntu[1][0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ERCLI_CP2_Ubuntu" {
+      [32m+[0m[0m ami                                  = "ami-06aa3f7caf3a30282"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t2.medium"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = "ERCLI_CEP2_Key"
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = "subnet-01aedcdc49f8b2d2b"
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Name" = "ERCLI_CP2_Ubuntu2"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Name" = "ERCLI_CP2_Ubuntu2"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = [
+          [32m+[0m[0m "sg-0f504cd8d2f145f39",
+        ]
+    }
+
+[1mPlan:[0m 2 to add, 0 to change, 0 to destroy.
+[0m[0m[1maws_instance.ERCLI_CP2_Ubuntu[1]: Creating...[0m[0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[0]: Creating...[0m[0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[1]: Still creating... [10s elapsed][0m[0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[0]: Still creating... [10s elapsed][0m[0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[1]: Still creating... [20s elapsed][0m[0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[0]: Still creating... [20s elapsed][0m[0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[0]: Still creating... [30s elapsed][0m[0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[1]: Still creating... [30s elapsed][0m[0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[0]: Creation complete after 31s [id=i-02e9da7f14be60d8d][0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[1]: Still creating... [40s elapsed][0m[0m
+[0m[1maws_instance.ERCLI_CP2_Ubuntu[1]: Creation complete after 42s [id=i-0b48d7099872b6560][0m
+[0m[1m[32m
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+[0m
+[Pipeline] echo
+Terraform apply complete
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Gathering Inventory Details)
+[Pipeline] sh
++ ansible-playbook Inventory_Playbook.yaml --private-key=/home/elmerlakanilawy/CapstoneProject/ERCLI-CEP2/ERCLI_CEP2_Key.pem
+[WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+PLAY [localhost] ***************************************************************
+
+TASK [Delete Existing inventory file] ******************************************
+changed: [localhost]
+
+TASK [Generate inventory file] *************************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Delay Timer)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sleep
+Sleeping for 2 min 0 sec
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Kubernetes Installation)
+[Pipeline] sh
++ ansible-playbook -vv -i inventory.yaml Ansible_Playbook.yaml --private-key=/home/elmerlakanilawy/CapstoneProject/ERCLI-CEP2/ERCLI_CEP2_Key.pem -e ansible_ssh_common_args="-o StrictHostKeyChecking=no"
+ansible-playbook [core 2.12.1]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/var/lib/jenkins/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /var/lib/jenkins/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.10 (default, Nov 22 2023, 10:22:35) [GCC 9.4.0]
+  jinja version = 2.10.1
+  libyaml = True
+Using /etc/ansible/ansible.cfg as config file
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: Ansible_Playbook.yaml ************************************************
+1 plays in Ansible_Playbook.yaml
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:2
+ok: [node2]
+ok: [node1]
+
+TASK [Wait for system to boot up] **********************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:8
+Pausing for 60 seconds
+(ctrl+C then 'C' = continue early, ctrl+C then 'A' = abort)
+ok: [node1] => {"changed": false, "delta": 60, "echo": true, "rc": 0, "start": "2023-12-02 20:53:01.177922", "stderr": "", "stdout": "Paused for 1.0 minutes", "stop": "2023-12-02 20:54:01.178096", "user_input": ""}
+META: ran handlers
+
+TASK [Wait for system to boot up] **********************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:12
+Pausing for 30 seconds
+(ctrl+C then 'C' = continue early, ctrl+C then 'A' = abort)
+ok: [node1] => {"changed": false, "delta": 30, "echo": true, "rc": 0, "start": "2023-12-02 20:54:01.200284", "stderr": "", "stdout": "Paused for 30.0 seconds", "stop": "2023-12-02 20:54:31.200456", "user_input": ""}
+
+TASK [Update apt package index] ************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:16
+changed: [node2] => {"cache_update_time": 1701550477, "cache_updated": true, "changed": true}
+changed: [node1] => {"cache_update_time": 1701550477, "cache_updated": true, "changed": true}
+
+TASK [Install necessary packages] **********************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:21
+changed: [node2] => {"cache_update_time": 1701550477, "cache_updated": false, "changed": true, "stderr": "", "stderr_lines": [], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following additional packages will be installed:\n  bridge-utils dns-root-data dnsmasq-base libidn11 pigz runc ubuntu-fan\nSuggested packages:\n  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-doc\n  rinse zfs-fuse | zfsutils\nThe following NEW packages will be installed:\n  apt-transport-https bridge-utils containerd dns-root-data dnsmasq-base\n  docker.io libidn11 pigz runc ubuntu-fan\n0 upgraded, 10 newly installed, 0 to remove and 36 not upgraded.\nNeed to get 63.2 MB of archives.\nAfter this operation, 267 MB of additional disk space will be used.\nGet:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 pigz amd64 2.4-1 [57.4 kB]\nGet:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 apt-transport-https all 2.0.10 [1,704 B]\nGet:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 bridge-utils amd64 1.6-2ubuntu1 [30.5 kB]\nGet:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 runc amd64 1.1.7-0ubuntu1~20.04.1 [3,819 kB]\nGet:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 containerd amd64 1.7.2-0ubuntu1~20.04.1 [32.5 MB]\nGet:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 dns-root-data all 2019052802 [5,300 B]\nGet:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libidn11 amd64 1.33-2.2ubuntu2 [46.2 kB]\nGet:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 dnsmasq-base amd64 2.80-1.1ubuntu1.7 [315 kB]\nGet:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 docker.io amd64 24.0.5-0ubuntu1~20.04.1 [26.4 MB]\nGet:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-fan all 0.12.13ubuntu0.1 [34.4 kB]\nPreconfiguring packages ...\nFetched 63.2 MB in 2s (38.6 MB/s)\nSelecting previously unselected package pigz.\r\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database ... 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75%\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(Reading database ... 95%\r(Reading database ... 100%\r(Reading database ... 62002 files and directories currently installed.)\r\nPreparing to unpack .../0-pigz_2.4-1_amd64.deb ...\r\nUnpacking pigz (2.4-1) ...\r\nSelecting previously unselected package apt-transport-https.\r\nPreparing to unpack .../1-apt-transport-https_2.0.10_all.deb ...\r\nUnpacking apt-transport-https (2.0.10) ...\r\nSelecting previously unselected package bridge-utils.\r\nPreparing to unpack .../2-bridge-utils_1.6-2ubuntu1_amd64.deb ...\r\nUnpacking bridge-utils (1.6-2ubuntu1) ...\r\nSelecting previously unselected package runc.\r\nPreparing to unpack .../3-runc_1.1.7-0ubuntu1~20.04.1_amd64.deb ...\r\nUnpacking runc (1.1.7-0ubuntu1~20.04.1) ...\r\nSelecting previously unselected package containerd.\r\nPreparing to unpack .../4-containerd_1.7.2-0ubuntu1~20.04.1_amd64.deb ...\r\nUnpacking containerd (1.7.2-0ubuntu1~20.04.1) ...\r\nSelecting previously unselected package dns-root-data.\r\nPreparing to unpack .../5-dns-root-data_2019052802_all.deb ...\r\nUnpacking dns-root-data (2019052802) ...\r\nSelecting previously unselected package libidn11:amd64.\r\nPreparing to unpack .../6-libidn11_1.33-2.2ubuntu2_amd64.deb ...\r\nUnpacking libidn11:amd64 (1.33-2.2ubuntu2) ...\r\nSelecting previously unselected package dnsmasq-base.\r\nPreparing to unpack .../7-dnsmasq-base_2.80-1.1ubuntu1.7_amd64.deb ...\r\nUnpacking dnsmasq-base (2.80-1.1ubuntu1.7) ...\r\nSelecting previously unselected package docker.io.\r\nPreparing to unpack .../8-docker.io_24.0.5-0ubuntu1~20.04.1_amd64.deb ...\r\nUnpacking docker.io (24.0.5-0ubuntu1~20.04.1) ...\r\nSelecting previously unselected package ubuntu-fan.\r\nPreparing to unpack .../9-ubuntu-fan_0.12.13ubuntu0.1_all.deb ...\r\nUnpacking ubuntu-fan (0.12.13ubuntu0.1) ...\r\nSetting up apt-transport-https (2.0.10) ...\r\nSetting up runc (1.1.7-0ubuntu1~20.04.1) ...\r\nSetting up dns-root-data (2019052802) ...\r\nSetting up libidn11:amd64 (1.33-2.2ubuntu2) ...\r\nSetting up bridge-utils (1.6-2ubuntu1) ...\r\nSetting up pigz (2.4-1) ...\r\nSetting up containerd (1.7.2-0ubuntu1~20.04.1) ...\r\nCreated symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.\r\nSetting up docker.io (24.0.5-0ubuntu1~20.04.1) ...\r\nAdding group `docker' (GID 120) ...\r\nDone.\r\nCreated symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.\r\nCreated symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.\r\nSetting up dnsmasq-base (2.80-1.1ubuntu1.7) ...\r\nSetting up ubuntu-fan (0.12.13ubuntu0.1) ...\r\nCreated symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /lib/systemd/system/ubuntu-fan.service.\r\nProcessing triggers for systemd (245.4-4ubuntu3.22) ...\r\nProcessing triggers for man-db (2.9.1-1) ...\r\nProcessing triggers for dbus (1.12.16-2ubuntu2.3) ...\r\nProcessing triggers for libc-bin (2.31-0ubuntu9.12) ...\r\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "The following additional packages will be installed:", "  bridge-utils dns-root-data dnsmasq-base libidn11 pigz runc ubuntu-fan", "Suggested packages:", "  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-doc", "  rinse zfs-fuse | zfsutils", "The following NEW packages will be installed:", "  apt-transport-https bridge-utils containerd dns-root-data dnsmasq-base", "  docker.io libidn11 pigz runc ubuntu-fan", "0 upgraded, 10 newly installed, 0 to remove and 36 not upgraded.", "Need to get 63.2 MB of archives.", "After this operation, 267 MB of additional disk space will be used.", "Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 pigz amd64 2.4-1 [57.4 kB]", "Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 apt-transport-https all 2.0.10 [1,704 B]", "Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 bridge-utils amd64 1.6-2ubuntu1 [30.5 kB]", "Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 runc amd64 1.1.7-0ubuntu1~20.04.1 [3,819 kB]", "Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 containerd amd64 1.7.2-0ubuntu1~20.04.1 [32.5 MB]", "Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 dns-root-data all 2019052802 [5,300 B]", "Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libidn11 amd64 1.33-2.2ubuntu2 [46.2 kB]", "Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 dnsmasq-base amd64 2.80-1.1ubuntu1.7 [315 kB]", "Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 docker.io amd64 24.0.5-0ubuntu1~20.04.1 [26.4 MB]", "Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-fan all 0.12.13ubuntu0.1 [34.4 kB]", "Preconfiguring packages ...", "Fetched 63.2 MB in 2s (38.6 MB/s)", "Selecting previously unselected package pigz.", "(Reading database ... ", "(Reading database ... 5%", "(Reading database ... 10%", "(Reading database ... 15%", "(Reading database ... 20%", "(Reading database ... 25%", "(Reading database ... 30%", "(Reading database ... 35%", "(Reading database ... 40%", "(Reading database ... 45%", "(Reading database ... 50%", "(Reading database ... 55%", "(Reading database ... 60%", "(Reading database ... 65%", "(Reading database ... 70%", "(Reading database ... 75%", "(Reading database ... 80%", "(Reading database ... 85%", "(Reading database ... 90%", "(Reading database ... 95%", "(Reading database ... 100%", "(Reading database ... 62002 files and directories currently installed.)", "Preparing to unpack .../0-pigz_2.4-1_amd64.deb ...", "Unpacking pigz (2.4-1) ...", "Selecting previously unselected package apt-transport-https.", "Preparing to unpack .../1-apt-transport-https_2.0.10_all.deb ...", "Unpacking apt-transport-https (2.0.10) ...", "Selecting previously unselected package bridge-utils.", "Preparing to unpack .../2-bridge-utils_1.6-2ubuntu1_amd64.deb ...", "Unpacking bridge-utils (1.6-2ubuntu1) ...", "Selecting previously unselected package runc.", "Preparing to unpack .../3-runc_1.1.7-0ubuntu1~20.04.1_amd64.deb ...", "Unpacking runc (1.1.7-0ubuntu1~20.04.1) ...", "Selecting previously unselected package containerd.", "Preparing to unpack .../4-containerd_1.7.2-0ubuntu1~20.04.1_amd64.deb ...", "Unpacking containerd (1.7.2-0ubuntu1~20.04.1) ...", "Selecting previously unselected package dns-root-data.", "Preparing to unpack .../5-dns-root-data_2019052802_all.deb ...", "Unpacking dns-root-data (2019052802) ...", "Selecting previously unselected package libidn11:amd64.", "Preparing to unpack .../6-libidn11_1.33-2.2ubuntu2_amd64.deb ...", "Unpacking libidn11:amd64 (1.33-2.2ubuntu2) ...", "Selecting previously unselected package dnsmasq-base.", "Preparing to unpack .../7-dnsmasq-base_2.80-1.1ubuntu1.7_amd64.deb ...", "Unpacking dnsmasq-base (2.80-1.1ubuntu1.7) ...", "Selecting previously unselected package docker.io.", "Preparing to unpack .../8-docker.io_24.0.5-0ubuntu1~20.04.1_amd64.deb ...", "Unpacking docker.io (24.0.5-0ubuntu1~20.04.1) ...", "Selecting previously unselected package ubuntu-fan.", "Preparing to unpack .../9-ubuntu-fan_0.12.13ubuntu0.1_all.deb ...", "Unpacking ubuntu-fan (0.12.13ubuntu0.1) ...", "Setting up apt-transport-https (2.0.10) ...", "Setting up runc (1.1.7-0ubuntu1~20.04.1) ...", "Setting up dns-root-data (2019052802) ...", "Setting up libidn11:amd64 (1.33-2.2ubuntu2) ...", "Setting up bridge-utils (1.6-2ubuntu1) ...", "Setting up pigz (2.4-1) ...", "Setting up containerd (1.7.2-0ubuntu1~20.04.1) ...", "Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.", "Setting up docker.io (24.0.5-0ubuntu1~20.04.1) ...", "Adding group `docker' (GID 120) ...", "Done.", "Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.", "Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.", "Setting up dnsmasq-base (2.80-1.1ubuntu1.7) ...", "Setting up ubuntu-fan (0.12.13ubuntu0.1) ...", "Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /lib/systemd/system/ubuntu-fan.service.", "Processing triggers for systemd (245.4-4ubuntu3.22) ...", "Processing triggers for man-db (2.9.1-1) ...", "Processing triggers for dbus (1.12.16-2ubuntu2.3) ...", "Processing triggers for libc-bin (2.31-0ubuntu9.12) ..."]}
+changed: [node1] => {"cache_update_time": 1701550477, "cache_updated": false, "changed": true, "stderr": "", "stderr_lines": [], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following additional packages will be installed:\n  bridge-utils dns-root-data dnsmasq-base libidn11 pigz runc ubuntu-fan\nSuggested packages:\n  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-doc\n  rinse zfs-fuse | zfsutils\nThe following NEW packages will be installed:\n  apt-transport-https bridge-utils containerd dns-root-data dnsmasq-base\n  docker.io libidn11 pigz runc ubuntu-fan\n0 upgraded, 10 newly installed, 0 to remove and 36 not upgraded.\nNeed to get 63.2 MB of archives.\nAfter this operation, 267 MB of additional disk space will be used.\nGet:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 pigz amd64 2.4-1 [57.4 kB]\nGet:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 apt-transport-https all 2.0.10 [1,704 B]\nGet:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 bridge-utils amd64 1.6-2ubuntu1 [30.5 kB]\nGet:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 runc amd64 1.1.7-0ubuntu1~20.04.1 [3,819 kB]\nGet:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 containerd amd64 1.7.2-0ubuntu1~20.04.1 [32.5 MB]\nGet:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 dns-root-data all 2019052802 [5,300 B]\nGet:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libidn11 amd64 1.33-2.2ubuntu2 [46.2 kB]\nGet:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 dnsmasq-base amd64 2.80-1.1ubuntu1.7 [315 kB]\nGet:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 docker.io amd64 24.0.5-0ubuntu1~20.04.1 [26.4 MB]\nGet:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-fan all 0.12.13ubuntu0.1 [34.4 kB]\nPreconfiguring packages ...\nFetched 63.2 MB in 1s (42.5 MB/s)\nSelecting previously unselected package pigz.\r\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database ... 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75%\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(Reading database ... 95%\r(Reading database ... 100%\r(Reading database ... 62002 files and directories currently installed.)\r\nPreparing to unpack .../0-pigz_2.4-1_amd64.deb ...\r\nUnpacking pigz (2.4-1) ...\r\nSelecting previously unselected package apt-transport-https.\r\nPreparing to unpack .../1-apt-transport-https_2.0.10_all.deb ...\r\nUnpacking apt-transport-https (2.0.10) ...\r\nSelecting previously unselected package bridge-utils.\r\nPreparing to unpack .../2-bridge-utils_1.6-2ubuntu1_amd64.deb ...\r\nUnpacking bridge-utils (1.6-2ubuntu1) ...\r\nSelecting previously unselected package runc.\r\nPreparing to unpack .../3-runc_1.1.7-0ubuntu1~20.04.1_amd64.deb ...\r\nUnpacking runc (1.1.7-0ubuntu1~20.04.1) ...\r\nSelecting previously unselected package containerd.\r\nPreparing to unpack .../4-containerd_1.7.2-0ubuntu1~20.04.1_amd64.deb ...\r\nUnpacking containerd (1.7.2-0ubuntu1~20.04.1) ...\r\nSelecting previously unselected package dns-root-data.\r\nPreparing to unpack .../5-dns-root-data_2019052802_all.deb ...\r\nUnpacking dns-root-data (2019052802) ...\r\nSelecting previously unselected package libidn11:amd64.\r\nPreparing to unpack .../6-libidn11_1.33-2.2ubuntu2_amd64.deb ...\r\nUnpacking libidn11:amd64 (1.33-2.2ubuntu2) ...\r\nSelecting previously unselected package dnsmasq-base.\r\nPreparing to unpack .../7-dnsmasq-base_2.80-1.1ubuntu1.7_amd64.deb ...\r\nUnpacking dnsmasq-base (2.80-1.1ubuntu1.7) ...\r\nSelecting previously unselected package docker.io.\r\nPreparing to unpack .../8-docker.io_24.0.5-0ubuntu1~20.04.1_amd64.deb ...\r\nUnpacking docker.io (24.0.5-0ubuntu1~20.04.1) ...\r\nSelecting previously unselected package ubuntu-fan.\r\nPreparing to unpack .../9-ubuntu-fan_0.12.13ubuntu0.1_all.deb ...\r\nUnpacking ubuntu-fan (0.12.13ubuntu0.1) ...\r\nSetting up apt-transport-https (2.0.10) ...\r\nSetting up runc (1.1.7-0ubuntu1~20.04.1) ...\r\nSetting up dns-root-data (2019052802) ...\r\nSetting up libidn11:amd64 (1.33-2.2ubuntu2) ...\r\nSetting up bridge-utils (1.6-2ubuntu1) ...\r\nSetting up pigz (2.4-1) ...\r\nSetting up containerd (1.7.2-0ubuntu1~20.04.1) ...\r\nCreated symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.\r\nSetting up docker.io (24.0.5-0ubuntu1~20.04.1) ...\r\nAdding group `docker' (GID 120) ...\r\nDone.\r\nCreated symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.\r\nCreated symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.\r\nSetting up dnsmasq-base (2.80-1.1ubuntu1.7) ...\r\nSetting up ubuntu-fan (0.12.13ubuntu0.1) ...\r\nCreated symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /lib/systemd/system/ubuntu-fan.service.\r\nProcessing triggers for systemd (245.4-4ubuntu3.22) ...\r\nProcessing triggers for man-db (2.9.1-1) ...\r\nProcessing triggers for dbus (1.12.16-2ubuntu2.3) ...\r\nProcessing triggers for libc-bin (2.31-0ubuntu9.12) ...\r\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "The following additional packages will be installed:", "  bridge-utils dns-root-data dnsmasq-base libidn11 pigz runc ubuntu-fan", "Suggested packages:", "  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-doc", "  rinse zfs-fuse | zfsutils", "The following NEW packages will be installed:", "  apt-transport-https bridge-utils containerd dns-root-data dnsmasq-base", "  docker.io libidn11 pigz runc ubuntu-fan", "0 upgraded, 10 newly installed, 0 to remove and 36 not upgraded.", "Need to get 63.2 MB of archives.", "After this operation, 267 MB of additional disk space will be used.", "Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/universe amd64 pigz amd64 2.4-1 [57.4 kB]", "Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 apt-transport-https all 2.0.10 [1,704 B]", "Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 bridge-utils amd64 1.6-2ubuntu1 [30.5 kB]", "Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 runc amd64 1.1.7-0ubuntu1~20.04.1 [3,819 kB]", "Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 containerd amd64 1.7.2-0ubuntu1~20.04.1 [32.5 MB]", "Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 dns-root-data all 2019052802 [5,300 B]", "Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libidn11 amd64 1.33-2.2ubuntu2 [46.2 kB]", "Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 dnsmasq-base amd64 2.80-1.1ubuntu1.7 [315 kB]", "Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/universe amd64 docker.io amd64 24.0.5-0ubuntu1~20.04.1 [26.4 MB]", "Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 ubuntu-fan all 0.12.13ubuntu0.1 [34.4 kB]", "Preconfiguring packages ...", "Fetched 63.2 MB in 1s (42.5 MB/s)", "Selecting previously unselected package pigz.", "(Reading database ... ", "(Reading database ... 5%", "(Reading database ... 10%", "(Reading database ... 15%", "(Reading database ... 20%", "(Reading database ... 25%", "(Reading database ... 30%", "(Reading database ... 35%", "(Reading database ... 40%", "(Reading database ... 45%", "(Reading database ... 50%", "(Reading database ... 55%", "(Reading database ... 60%", "(Reading database ... 65%", "(Reading database ... 70%", "(Reading database ... 75%", "(Reading database ... 80%", "(Reading database ... 85%", "(Reading database ... 90%", "(Reading database ... 95%", "(Reading database ... 100%", "(Reading database ... 62002 files and directories currently installed.)", "Preparing to unpack .../0-pigz_2.4-1_amd64.deb ...", "Unpacking pigz (2.4-1) ...", "Selecting previously unselected package apt-transport-https.", "Preparing to unpack .../1-apt-transport-https_2.0.10_all.deb ...", "Unpacking apt-transport-https (2.0.10) ...", "Selecting previously unselected package bridge-utils.", "Preparing to unpack .../2-bridge-utils_1.6-2ubuntu1_amd64.deb ...", "Unpacking bridge-utils (1.6-2ubuntu1) ...", "Selecting previously unselected package runc.", "Preparing to unpack .../3-runc_1.1.7-0ubuntu1~20.04.1_amd64.deb ...", "Unpacking runc (1.1.7-0ubuntu1~20.04.1) ...", "Selecting previously unselected package containerd.", "Preparing to unpack .../4-containerd_1.7.2-0ubuntu1~20.04.1_amd64.deb ...", "Unpacking containerd (1.7.2-0ubuntu1~20.04.1) ...", "Selecting previously unselected package dns-root-data.", "Preparing to unpack .../5-dns-root-data_2019052802_all.deb ...", "Unpacking dns-root-data (2019052802) ...", "Selecting previously unselected package libidn11:amd64.", "Preparing to unpack .../6-libidn11_1.33-2.2ubuntu2_amd64.deb ...", "Unpacking libidn11:amd64 (1.33-2.2ubuntu2) ...", "Selecting previously unselected package dnsmasq-base.", "Preparing to unpack .../7-dnsmasq-base_2.80-1.1ubuntu1.7_amd64.deb ...", "Unpacking dnsmasq-base (2.80-1.1ubuntu1.7) ...", "Selecting previously unselected package docker.io.", "Preparing to unpack .../8-docker.io_24.0.5-0ubuntu1~20.04.1_amd64.deb ...", "Unpacking docker.io (24.0.5-0ubuntu1~20.04.1) ...", "Selecting previously unselected package ubuntu-fan.", "Preparing to unpack .../9-ubuntu-fan_0.12.13ubuntu0.1_all.deb ...", "Unpacking ubuntu-fan (0.12.13ubuntu0.1) ...", "Setting up apt-transport-https (2.0.10) ...", "Setting up runc (1.1.7-0ubuntu1~20.04.1) ...", "Setting up dns-root-data (2019052802) ...", "Setting up libidn11:amd64 (1.33-2.2ubuntu2) ...", "Setting up bridge-utils (1.6-2ubuntu1) ...", "Setting up pigz (2.4-1) ...", "Setting up containerd (1.7.2-0ubuntu1~20.04.1) ...", "Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /lib/systemd/system/containerd.service.", "Setting up docker.io (24.0.5-0ubuntu1~20.04.1) ...", "Adding group `docker' (GID 120) ...", "Done.", "Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /lib/systemd/system/docker.service.", "Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.", "Setting up dnsmasq-base (2.80-1.1ubuntu1.7) ...", "Setting up ubuntu-fan (0.12.13ubuntu0.1) ...", "Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /lib/systemd/system/ubuntu-fan.service.", "Processing triggers for systemd (245.4-4ubuntu3.22) ...", "Processing triggers for man-db (2.9.1-1) ...", "Processing triggers for dbus (1.12.16-2ubuntu2.3) ...", "Processing triggers for libc-bin (2.31-0ubuntu9.12) ..."]}
+
+TASK [Create keyrings directory] ***********************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:34
+changed: [node2] => {"changed": true, "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/etc/apt/keyrings", "size": 4096, "state": "directory", "uid": 0}
+changed: [node1] => {"changed": true, "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/etc/apt/keyrings", "size": 4096, "state": "directory", "uid": 0}
+
+TASK [Remove existing Kubernetes apt-key file if it exists] ********************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:40
+ok: [node1] => {"changed": false, "path": "/etc/apt/keyrings/kubernetes-apt-keyring.gpg", "state": "absent"}
+ok: [node2] => {"changed": false, "path": "/etc/apt/keyrings/kubernetes-apt-keyring.gpg", "state": "absent"}
+
+TASK [Add Kubernetes apt-key] **************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:45
+changed: [node2] => {"changed": true, "cmd": "curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg", "delta": "0:00:00.089647", "end": "2023-12-02 20:55:10.925424", "msg": "", "rc": 0, "start": "2023-12-02 20:55:10.835777", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+changed: [node1] => {"changed": true, "cmd": "curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg", "delta": "0:00:00.108134", "end": "2023-12-02 20:55:10.947970", "msg": "", "rc": 0, "start": "2023-12-02 20:55:10.839836", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+TASK [Add Kubernetes apt repository list] **************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:48
+changed: [node2] => {"changed": true, "cmd": "echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list", "delta": "0:00:00.010947", "end": "2023-12-02 20:55:11.255247", "msg": "", "rc": 0, "start": "2023-12-02 20:55:11.244300", "stderr": "", "stderr_lines": [], "stdout": "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /", "stdout_lines": ["deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /"]}
+changed: [node1] => {"changed": true, "cmd": "echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list", "delta": "0:00:00.011217", "end": "2023-12-02 20:55:11.259006", "msg": "", "rc": 0, "start": "2023-12-02 20:55:11.247789", "stderr": "", "stderr_lines": [], "stdout": "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /", "stdout_lines": ["deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /"]}
+
+TASK [Update apt cache] ********************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:51
+changed: [node2] => {"cache_update_time": 1701550514, "cache_updated": true, "changed": true}
+changed: [node1] => {"cache_update_time": 1701550514, "cache_updated": true, "changed": true}
+
+TASK [Install Kubernetes] ******************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:55
+changed: [node2] => {"cache_update_time": 1701550514, "cache_updated": false, "changed": true, "stderr": "", "stderr_lines": [], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following additional packages will be installed:\n  conntrack cri-tools ebtables kubernetes-cni socat\nSuggested packages:\n  nftables\nThe following NEW packages will be installed:\n  conntrack cri-tools ebtables kubeadm kubectl kubelet kubernetes-cni socat\n0 upgraded, 8 newly installed, 0 to remove and 36 not upgraded.\nNeed to get 87.6 MB of archives.\nAfter this operation, 337 MB of additional disk space will be used.\nGet:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 conntrack amd64 1:1.4.5-2 [30.3 kB]\nGet:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 ebtables amd64 2.0.11-3build1 [80.3 kB]\nGet:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 socat amd64 1.7.3.3-2 [323 kB]\nGet:4 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  cri-tools 1.28.0-1.1 [19.6 MB]\nGet:5 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubernetes-cni 1.2.0-2.1 [27.6 MB]\nGet:6 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubelet 1.28.4-1.1 [19.5 MB]\nGet:7 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubectl 1.28.4-1.1 [10.3 MB]\nGet:8 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubeadm 1.28.4-1.1 [10.1 MB]\nFetched 87.6 MB in 1s (64.8 MB/s)\nSelecting previously unselected package conntrack.\r\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database ... 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75%\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(Reading database ... 95%\r(Reading database ... 100%\r(Reading database ... 62372 files and directories currently installed.)\r\nPreparing to unpack .../0-conntrack_1%3a1.4.5-2_amd64.deb ...\r\nUnpacking conntrack (1:1.4.5-2) ...\r\nSelecting previously unselected package cri-tools.\r\nPreparing to unpack .../1-cri-tools_1.28.0-1.1_amd64.deb ...\r\nUnpacking cri-tools (1.28.0-1.1) ...\r\nSelecting previously unselected package ebtables.\r\nPreparing to unpack .../2-ebtables_2.0.11-3build1_amd64.deb ...\r\nUnpacking ebtables (2.0.11-3build1) ...\r\nSelecting previously unselected package kubernetes-cni.\r\nPreparing to unpack .../3-kubernetes-cni_1.2.0-2.1_amd64.deb ...\r\nUnpacking kubernetes-cni (1.2.0-2.1) ...\r\nSelecting previously unselected package socat.\r\nPreparing to unpack .../4-socat_1.7.3.3-2_amd64.deb ...\r\nUnpacking socat (1.7.3.3-2) ...\r\nSelecting previously unselected package kubelet.\r\nPreparing to unpack .../5-kubelet_1.28.4-1.1_amd64.deb ...\r\nUnpacking kubelet (1.28.4-1.1) ...\r\nSelecting previously unselected package kubectl.\r\nPreparing to unpack .../6-kubectl_1.28.4-1.1_amd64.deb ...\r\nUnpacking kubectl (1.28.4-1.1) ...\r\nSelecting previously unselected package kubeadm.\r\nPreparing to unpack .../7-kubeadm_1.28.4-1.1_amd64.deb ...\r\nUnpacking kubeadm (1.28.4-1.1) ...\r\nSetting up conntrack (1:1.4.5-2) ...\r\nSetting up kubectl (1.28.4-1.1) ...\r\nSetting up ebtables (2.0.11-3build1) ...\r\nSetting up socat (1.7.3.3-2) ...\r\nSetting up cri-tools (1.28.0-1.1) ...\r\nSetting up kubernetes-cni (1.2.0-2.1) ...\r\nSetting up kubelet (1.28.4-1.1) ...\r\nSetting up kubeadm (1.28.4-1.1) ...\r\nProcessing triggers for man-db (2.9.1-1) ...\r\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "The following additional packages will be installed:", "  conntrack cri-tools ebtables kubernetes-cni socat", "Suggested packages:", "  nftables", "The following NEW packages will be installed:", "  conntrack cri-tools ebtables kubeadm kubectl kubelet kubernetes-cni socat", "0 upgraded, 8 newly installed, 0 to remove and 36 not upgraded.", "Need to get 87.6 MB of archives.", "After this operation, 337 MB of additional disk space will be used.", "Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 conntrack amd64 1:1.4.5-2 [30.3 kB]", "Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 ebtables amd64 2.0.11-3build1 [80.3 kB]", "Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 socat amd64 1.7.3.3-2 [323 kB]", "Get:4 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  cri-tools 1.28.0-1.1 [19.6 MB]", "Get:5 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubernetes-cni 1.2.0-2.1 [27.6 MB]", "Get:6 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubelet 1.28.4-1.1 [19.5 MB]", "Get:7 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubectl 1.28.4-1.1 [10.3 MB]", "Get:8 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubeadm 1.28.4-1.1 [10.1 MB]", "Fetched 87.6 MB in 1s (64.8 MB/s)", "Selecting previously unselected package conntrack.", "(Reading database ... ", "(Reading database ... 5%", "(Reading database ... 10%", "(Reading database ... 15%", "(Reading database ... 20%", "(Reading database ... 25%", "(Reading database ... 30%", "(Reading database ... 35%", "(Reading database ... 40%", "(Reading database ... 45%", "(Reading database ... 50%", "(Reading database ... 55%", "(Reading database ... 60%", "(Reading database ... 65%", "(Reading database ... 70%", "(Reading database ... 75%", "(Reading database ... 80%", "(Reading database ... 85%", "(Reading database ... 90%", "(Reading database ... 95%", "(Reading database ... 100%", "(Reading database ... 62372 files and directories currently installed.)", "Preparing to unpack .../0-conntrack_1%3a1.4.5-2_amd64.deb ...", "Unpacking conntrack (1:1.4.5-2) ...", "Selecting previously unselected package cri-tools.", "Preparing to unpack .../1-cri-tools_1.28.0-1.1_amd64.deb ...", "Unpacking cri-tools (1.28.0-1.1) ...", "Selecting previously unselected package ebtables.", "Preparing to unpack .../2-ebtables_2.0.11-3build1_amd64.deb ...", "Unpacking ebtables (2.0.11-3build1) ...", "Selecting previously unselected package kubernetes-cni.", "Preparing to unpack .../3-kubernetes-cni_1.2.0-2.1_amd64.deb ...", "Unpacking kubernetes-cni (1.2.0-2.1) ...", "Selecting previously unselected package socat.", "Preparing to unpack .../4-socat_1.7.3.3-2_amd64.deb ...", "Unpacking socat (1.7.3.3-2) ...", "Selecting previously unselected package kubelet.", "Preparing to unpack .../5-kubelet_1.28.4-1.1_amd64.deb ...", "Unpacking kubelet (1.28.4-1.1) ...", "Selecting previously unselected package kubectl.", "Preparing to unpack .../6-kubectl_1.28.4-1.1_amd64.deb ...", "Unpacking kubectl (1.28.4-1.1) ...", "Selecting previously unselected package kubeadm.", "Preparing to unpack .../7-kubeadm_1.28.4-1.1_amd64.deb ...", "Unpacking kubeadm (1.28.4-1.1) ...", "Setting up conntrack (1:1.4.5-2) ...", "Setting up kubectl (1.28.4-1.1) ...", "Setting up ebtables (2.0.11-3build1) ...", "Setting up socat (1.7.3.3-2) ...", "Setting up cri-tools (1.28.0-1.1) ...", "Setting up kubernetes-cni (1.2.0-2.1) ...", "Setting up kubelet (1.28.4-1.1) ...", "Setting up kubeadm (1.28.4-1.1) ...", "Processing triggers for man-db (2.9.1-1) ..."]}
+changed: [node1] => {"cache_update_time": 1701550514, "cache_updated": false, "changed": true, "stderr": "", "stderr_lines": [], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following additional packages will be installed:\n  conntrack cri-tools ebtables kubernetes-cni socat\nSuggested packages:\n  nftables\nThe following NEW packages will be installed:\n  conntrack cri-tools ebtables kubeadm kubectl kubelet kubernetes-cni socat\n0 upgraded, 8 newly installed, 0 to remove and 36 not upgraded.\nNeed to get 87.6 MB of archives.\nAfter this operation, 337 MB of additional disk space will be used.\nGet:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 conntrack amd64 1:1.4.5-2 [30.3 kB]\nGet:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 ebtables amd64 2.0.11-3build1 [80.3 kB]\nGet:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 socat amd64 1.7.3.3-2 [323 kB]\nGet:4 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  cri-tools 1.28.0-1.1 [19.6 MB]\nGet:5 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubernetes-cni 1.2.0-2.1 [27.6 MB]\nGet:6 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubelet 1.28.4-1.1 [19.5 MB]\nGet:7 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubectl 1.28.4-1.1 [10.3 MB]\nGet:8 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubeadm 1.28.4-1.1 [10.1 MB]\nFetched 87.6 MB in 1s (77.8 MB/s)\nSelecting previously unselected package conntrack.\r\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database ... 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75%\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(Reading database ... 95%\r(Reading database ... 100%\r(Reading database ... 62372 files and directories currently installed.)\r\nPreparing to unpack .../0-conntrack_1%3a1.4.5-2_amd64.deb ...\r\nUnpacking conntrack (1:1.4.5-2) ...\r\nSelecting previously unselected package cri-tools.\r\nPreparing to unpack .../1-cri-tools_1.28.0-1.1_amd64.deb ...\r\nUnpacking cri-tools (1.28.0-1.1) ...\r\nSelecting previously unselected package ebtables.\r\nPreparing to unpack .../2-ebtables_2.0.11-3build1_amd64.deb ...\r\nUnpacking ebtables (2.0.11-3build1) ...\r\nSelecting previously unselected package kubernetes-cni.\r\nPreparing to unpack .../3-kubernetes-cni_1.2.0-2.1_amd64.deb ...\r\nUnpacking kubernetes-cni (1.2.0-2.1) ...\r\nSelecting previously unselected package socat.\r\nPreparing to unpack .../4-socat_1.7.3.3-2_amd64.deb ...\r\nUnpacking socat (1.7.3.3-2) ...\r\nSelecting previously unselected package kubelet.\r\nPreparing to unpack .../5-kubelet_1.28.4-1.1_amd64.deb ...\r\nUnpacking kubelet (1.28.4-1.1) ...\r\nSelecting previously unselected package kubectl.\r\nPreparing to unpack .../6-kubectl_1.28.4-1.1_amd64.deb ...\r\nUnpacking kubectl (1.28.4-1.1) ...\r\nSelecting previously unselected package kubeadm.\r\nPreparing to unpack .../7-kubeadm_1.28.4-1.1_amd64.deb ...\r\nUnpacking kubeadm (1.28.4-1.1) ...\r\nSetting up conntrack (1:1.4.5-2) ...\r\nSetting up kubectl (1.28.4-1.1) ...\r\nSetting up ebtables (2.0.11-3build1) ...\r\nSetting up socat (1.7.3.3-2) ...\r\nSetting up cri-tools (1.28.0-1.1) ...\r\nSetting up kubernetes-cni (1.2.0-2.1) ...\r\nSetting up kubelet (1.28.4-1.1) ...\r\nSetting up kubeadm (1.28.4-1.1) ...\r\nProcessing triggers for man-db (2.9.1-1) ...\r\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "The following additional packages will be installed:", "  conntrack cri-tools ebtables kubernetes-cni socat", "Suggested packages:", "  nftables", "The following NEW packages will be installed:", "  conntrack cri-tools ebtables kubeadm kubectl kubelet kubernetes-cni socat", "0 upgraded, 8 newly installed, 0 to remove and 36 not upgraded.", "Need to get 87.6 MB of archives.", "After this operation, 337 MB of additional disk space will be used.", "Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 conntrack amd64 1:1.4.5-2 [30.3 kB]", "Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 ebtables amd64 2.0.11-3build1 [80.3 kB]", "Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 socat amd64 1.7.3.3-2 [323 kB]", "Get:4 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  cri-tools 1.28.0-1.1 [19.6 MB]", "Get:5 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubernetes-cni 1.2.0-2.1 [27.6 MB]", "Get:6 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubelet 1.28.4-1.1 [19.5 MB]", "Get:7 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubectl 1.28.4-1.1 [10.3 MB]", "Get:8 https://prod-cdn.packages.k8s.io/repositories/isv:/kubernetes:/core:/stable:/v1.28/deb  kubeadm 1.28.4-1.1 [10.1 MB]", "Fetched 87.6 MB in 1s (77.8 MB/s)", "Selecting previously unselected package conntrack.", "(Reading database ... ", "(Reading database ... 5%", "(Reading database ... 10%", "(Reading database ... 15%", "(Reading database ... 20%", "(Reading database ... 25%", "(Reading database ... 30%", "(Reading database ... 35%", "(Reading database ... 40%", "(Reading database ... 45%", "(Reading database ... 50%", "(Reading database ... 55%", "(Reading database ... 60%", "(Reading database ... 65%", "(Reading database ... 70%", "(Reading database ... 75%", "(Reading database ... 80%", "(Reading database ... 85%", "(Reading database ... 90%", "(Reading database ... 95%", "(Reading database ... 100%", "(Reading database ... 62372 files and directories currently installed.)", "Preparing to unpack .../0-conntrack_1%3a1.4.5-2_amd64.deb ...", "Unpacking conntrack (1:1.4.5-2) ...", "Selecting previously unselected package cri-tools.", "Preparing to unpack .../1-cri-tools_1.28.0-1.1_amd64.deb ...", "Unpacking cri-tools (1.28.0-1.1) ...", "Selecting previously unselected package ebtables.", "Preparing to unpack .../2-ebtables_2.0.11-3build1_amd64.deb ...", "Unpacking ebtables (2.0.11-3build1) ...", "Selecting previously unselected package kubernetes-cni.", "Preparing to unpack .../3-kubernetes-cni_1.2.0-2.1_amd64.deb ...", "Unpacking kubernetes-cni (1.2.0-2.1) ...", "Selecting previously unselected package socat.", "Preparing to unpack .../4-socat_1.7.3.3-2_amd64.deb ...", "Unpacking socat (1.7.3.3-2) ...", "Selecting previously unselected package kubelet.", "Preparing to unpack .../5-kubelet_1.28.4-1.1_amd64.deb ...", "Unpacking kubelet (1.28.4-1.1) ...", "Selecting previously unselected package kubectl.", "Preparing to unpack .../6-kubectl_1.28.4-1.1_amd64.deb ...", "Unpacking kubectl (1.28.4-1.1) ...", "Selecting previously unselected package kubeadm.", "Preparing to unpack .../7-kubeadm_1.28.4-1.1_amd64.deb ...", "Unpacking kubeadm (1.28.4-1.1) ...", "Setting up conntrack (1:1.4.5-2) ...", "Setting up kubectl (1.28.4-1.1) ...", "Setting up ebtables (2.0.11-3build1) ...", "Setting up socat (1.7.3.3-2) ...", "Setting up cri-tools (1.28.0-1.1) ...", "Setting up kubernetes-cni (1.2.0-2.1) ...", "Setting up kubelet (1.28.4-1.1) ...", "Setting up kubeadm (1.28.4-1.1) ...", "Processing triggers for man-db (2.9.1-1) ..."]}
+
+TASK [Hold Kubernetes packages] ************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:65
+changed: [node2] => (item=kubelet) => {"after": "hold", "ansible_loop_var": "item", "before": "install", "changed": true, "item": "kubelet"}
+changed: [node1] => (item=kubelet) => {"after": "hold", "ansible_loop_var": "item", "before": "install", "changed": true, "item": "kubelet"}
+changed: [node2] => (item=kubeadm) => {"after": "hold", "ansible_loop_var": "item", "before": "install", "changed": true, "item": "kubeadm"}
+changed: [node1] => (item=kubeadm) => {"after": "hold", "ansible_loop_var": "item", "before": "install", "changed": true, "item": "kubeadm"}
+changed: [node2] => (item=kubectl) => {"after": "hold", "ansible_loop_var": "item", "before": "install", "changed": true, "item": "kubectl"}
+changed: [node1] => (item=kubectl) => {"after": "hold", "ansible_loop_var": "item", "before": "install", "changed": true, "item": "kubectl"}
+
+TASK [Enable and start Docker] *************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:74
+ok: [node2] => {"changed": false, "enabled": true, "name": "docker", "state": "started", "status": {"ActiveEnterTimestamp": "Sat 2023-12-02 20:55:02 UTC", "ActiveEnterTimestampMonotonic": "260404559", "ActiveExitTimestampMonotonic": "0", "ActiveState": "active", "After": "containerd.service docker.socket basic.target network-online.target systemd-journald.socket firewalld.service system.slice sysinit.target", "AllowIsolate": "no", "AllowedCPUs": "", "AllowedMemoryNodes": "", "AmbientCapabilities": "", "AssertResult": "yes", "AssertTimestamp": "Sat 2023-12-02 20:54:59 UTC", "AssertTimestampMonotonic": "257868340", "Before": "multi-user.target shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "CPUAccounting": "no", "CPUAffinity": "", "CPUAffinityFromNUMA": "no", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "[not set]", "CPUUsageNSec": "[not set]", "CPUWeight": "[not set]", "CacheDirectoryMode": "0755", "CanIsolate": "no", "CanReload": "yes", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read 0x26 0x27 0x28", "CleanResult": "success", "CollectMode": "inactive", "ConditionResult": "yes", "ConditionTimestamp": "Sat 2023-12-02 20:54:59 UTC", "ConditionTimestampMonotonic": "257868338", "ConfigurationDirectoryMode": "0755", "Conflicts": "shutdown.target", "ControlGroup": "/system.slice/docker.service", "ControlPID": "0", "DefaultDependencies": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "Delegate": "yes", "DelegateControllers": "cpu cpuacct cpuset io blkio memory devices pids bpf-firewall bpf-devices", "Description": "Docker Application Container Engine", "DevicePolicy": "auto", "Documentation": "https://docs.docker.com", "DynamicUser": "no", "EffectiveCPUs": "", "EffectiveMemoryNodes": "", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "2382", "ExecMainStartTimestamp": "Sat 2023-12-02 20:54:59 UTC", "ExecMainStartTimestampMonotonic": "257869368", "ExecMainStatus": "0", "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -s HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecReloadEx": "{ path=/bin/kill ; argv[]=/bin/kill -s HUP $MAINPID ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStart": "{ path=/usr/bin/dockerd ; argv[]=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartEx": "{ path=/usr/bin/dockerd ; argv[]=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FinalKillSignal": "9", "FragmentPath": "/lib/systemd/system/docker.service", "GID": "[not set]", "GuessMainPID": "yes", "IOAccounting": "no", "IOReadBytes": "18446744073709551615", "IOReadOperations": "18446744073709551615", "IOSchedulingClass": "0", "IOSchedulingPriority": "0", "IOWeight": "[not set]", "IOWriteBytes": "18446744073709551615", "IOWriteOperations": "18446744073709551615", "IPAccounting": "no", "IPEgressBytes": "[no data]", "IPEgressPackets": "[no data]", "IPIngressBytes": "[no data]", "IPIngressPackets": "[no data]", "Id": "docker.service", "IgnoreOnIsolate": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestamp": "Sat 2023-12-02 20:54:59 UTC", "InactiveExitTimestampMonotonic": "257869615", "InvocationID": "e4cce4e3104449eca3d02f4177d1153f", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "JobTimeoutUSec": "infinity", "KeyringMode": "private", "KillMode": "process", "KillSignal": "15", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitCORE": "infinity", "LimitCORESoft": "infinity", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitMEMLOCK": "65536", "LimitMEMLOCKSoft": "65536", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitNOFILE": "infinity", "LimitNOFILESoft": "infinity", "LimitNPROC": "infinity", "LimitNPROCSoft": "infinity", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "LimitSIGPENDING": "15573", "LimitSIGPENDINGSoft": "15573", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LoadState": "loaded", "LockPersonality": "no", "LogLevelMax": "-1", "LogRateLimitBurst": "0", "LogRateLimitIntervalUSec": "0", "LogsDirectoryMode": "0755", "MainPID": "2382", "MemoryAccounting": "yes", "MemoryCurrent": "27955200", "MemoryDenyWriteExecute": "no", "MemoryHigh": "infinity", "MemoryLimit": "infinity", "MemoryLow": "0", "MemoryMax": "infinity", "MemoryMin": "0", "MemorySwapMax": "infinity", "MountAPIVFS": "no", "MountFlags": "", "NFileDescriptorStore": "0", "NRestarts": "0", "NUMAMask": "", "NUMAPolicy": "n/a", "Names": "docker.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "main", "OOMPolicy": "continue", "OOMScoreAdjust": "-500", "OnFailureJobMode": "replace", "Perpetual": "no", "PrivateDevices": "no", "PrivateMounts": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "PrivateUsers": "no", "ProtectControlGroups": "no", "ProtectHome": "no", "ProtectHostname": "no", "ProtectKernelLogs": "no", "ProtectKernelModules": "no", "ProtectKernelTunables": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "ReloadResult": "success", "RemainAfterExit": "no", "RemoveIPC": "no", "Requires": "system.slice docker.socket sysinit.target", "Restart": "always", "RestartKillSignal": "15", "RestartUSec": "2s", "RestrictNamespaces": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "RuntimeDirectoryPreserve": "no", "RuntimeMaxUSec": "infinity", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardInputData": "", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "3", "StartLimitIntervalUSec": "1min", "StartupBlockIOWeight": "[not set]", "StartupCPUShares": "[not set]", "StartupCPUWeight": "[not set]", "StartupIOWeight": "[not set]", "StateChangeTimestamp": "Sat 2023-12-02 20:55:02 UTC", "StateChangeTimestampMonotonic": "260404559", "StateDirectoryMode": "0755", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "running", "SuccessAction": "none", "SyslogFacility": "3", "SyslogLevel": "6", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TasksAccounting": "yes", "TasksCurrent": "10", "TasksMax": "infinity", "TimeoutAbortUSec": "infinity", "TimeoutCleanUSec": "infinity", "TimeoutStartUSec": "infinity", "TimeoutStopUSec": "infinity", "TimerSlackNSec": "50000", "Transient": "no", "TriggeredBy": "docker.socket", "Type": "notify", "UID": "[not set]", "UMask": "0022", "UnitFilePreset": "enabled", "UnitFileState": "enabled", "UtmpMode": "init", "WantedBy": "multi-user.target", "Wants": "containerd.service network-online.target", "WatchdogSignal": "6", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}}
+ok: [node1] => {"changed": false, "enabled": true, "name": "docker", "state": "started", "status": {"ActiveEnterTimestamp": "Sat 2023-12-02 20:55:03 UTC", "ActiveEnterTimestampMonotonic": "254841679", "ActiveExitTimestampMonotonic": "0", "ActiveState": "active", "After": "firewalld.service basic.target containerd.service docker.socket system.slice systemd-journald.socket sysinit.target network-online.target", "AllowIsolate": "no", "AllowedCPUs": "", "AllowedMemoryNodes": "", "AmbientCapabilities": "", "AssertResult": "yes", "AssertTimestamp": "Sat 2023-12-02 20:55:00 UTC", "AssertTimestampMonotonic": "252286921", "Before": "shutdown.target multi-user.target", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "CPUAccounting": "no", "CPUAffinity": "", "CPUAffinityFromNUMA": "no", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "[not set]", "CPUUsageNSec": "[not set]", "CPUWeight": "[not set]", "CacheDirectoryMode": "0755", "CanIsolate": "no", "CanReload": "yes", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read 0x26 0x27 0x28", "CleanResult": "success", "CollectMode": "inactive", "ConditionResult": "yes", "ConditionTimestamp": "Sat 2023-12-02 20:55:00 UTC", "ConditionTimestampMonotonic": "252286918", "ConfigurationDirectoryMode": "0755", "Conflicts": "shutdown.target", "ControlGroup": "/system.slice/docker.service", "ControlPID": "0", "DefaultDependencies": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "Delegate": "yes", "DelegateControllers": "cpu cpuacct cpuset io blkio memory devices pids bpf-firewall bpf-devices", "Description": "Docker Application Container Engine", "DevicePolicy": "auto", "Documentation": "https://docs.docker.com", "DynamicUser": "no", "EffectiveCPUs": "", "EffectiveMemoryNodes": "", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "2391", "ExecMainStartTimestamp": "Sat 2023-12-02 20:55:00 UTC", "ExecMainStartTimestampMonotonic": "252287904", "ExecMainStatus": "0", "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -s HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecReloadEx": "{ path=/bin/kill ; argv[]=/bin/kill -s HUP $MAINPID ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStart": "{ path=/usr/bin/dockerd ; argv[]=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartEx": "{ path=/usr/bin/dockerd ; argv[]=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FinalKillSignal": "9", "FragmentPath": "/lib/systemd/system/docker.service", "GID": "[not set]", "GuessMainPID": "yes", "IOAccounting": "no", "IOReadBytes": "18446744073709551615", "IOReadOperations": "18446744073709551615", "IOSchedulingClass": "0", "IOSchedulingPriority": "0", "IOWeight": "[not set]", "IOWriteBytes": "18446744073709551615", "IOWriteOperations": "18446744073709551615", "IPAccounting": "no", "IPEgressBytes": "[no data]", "IPEgressPackets": "[no data]", "IPIngressBytes": "[no data]", "IPIngressPackets": "[no data]", "Id": "docker.service", "IgnoreOnIsolate": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestamp": "Sat 2023-12-02 20:55:00 UTC", "InactiveExitTimestampMonotonic": "252288231", "InvocationID": "787afe4952a0459c99bd586cca59b6fd", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "JobTimeoutUSec": "infinity", "KeyringMode": "private", "KillMode": "process", "KillSignal": "15", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitCORE": "infinity", "LimitCORESoft": "infinity", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitMEMLOCK": "65536", "LimitMEMLOCKSoft": "65536", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitNOFILE": "infinity", "LimitNOFILESoft": "infinity", "LimitNPROC": "infinity", "LimitNPROCSoft": "infinity", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "LimitSIGPENDING": "15573", "LimitSIGPENDINGSoft": "15573", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LoadState": "loaded", "LockPersonality": "no", "LogLevelMax": "-1", "LogRateLimitBurst": "0", "LogRateLimitIntervalUSec": "0", "LogsDirectoryMode": "0755", "MainPID": "2391", "MemoryAccounting": "yes", "MemoryCurrent": "28045312", "MemoryDenyWriteExecute": "no", "MemoryHigh": "infinity", "MemoryLimit": "infinity", "MemoryLow": "0", "MemoryMax": "infinity", "MemoryMin": "0", "MemorySwapMax": "infinity", "MountAPIVFS": "no", "MountFlags": "", "NFileDescriptorStore": "0", "NRestarts": "0", "NUMAMask": "", "NUMAPolicy": "n/a", "Names": "docker.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "main", "OOMPolicy": "continue", "OOMScoreAdjust": "-500", "OnFailureJobMode": "replace", "Perpetual": "no", "PrivateDevices": "no", "PrivateMounts": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "PrivateUsers": "no", "ProtectControlGroups": "no", "ProtectHome": "no", "ProtectHostname": "no", "ProtectKernelLogs": "no", "ProtectKernelModules": "no", "ProtectKernelTunables": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "ReloadResult": "success", "RemainAfterExit": "no", "RemoveIPC": "no", "Requires": "docker.socket sysinit.target system.slice", "Restart": "always", "RestartKillSignal": "15", "RestartUSec": "2s", "RestrictNamespaces": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "RuntimeDirectoryPreserve": "no", "RuntimeMaxUSec": "infinity", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardInputData": "", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "3", "StartLimitIntervalUSec": "1min", "StartupBlockIOWeight": "[not set]", "StartupCPUShares": "[not set]", "StartupCPUWeight": "[not set]", "StartupIOWeight": "[not set]", "StateChangeTimestamp": "Sat 2023-12-02 20:55:03 UTC", "StateChangeTimestampMonotonic": "254841679", "StateDirectoryMode": "0755", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "running", "SuccessAction": "none", "SyslogFacility": "3", "SyslogLevel": "6", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TasksAccounting": "yes", "TasksCurrent": "9", "TasksMax": "infinity", "TimeoutAbortUSec": "infinity", "TimeoutCleanUSec": "infinity", "TimeoutStartUSec": "infinity", "TimeoutStopUSec": "infinity", "TimerSlackNSec": "50000", "Transient": "no", "TriggeredBy": "docker.socket", "Type": "notify", "UID": "[not set]", "UMask": "0022", "UnitFilePreset": "enabled", "UnitFileState": "enabled", "UtmpMode": "init", "WantedBy": "multi-user.target", "Wants": "network-online.target containerd.service", "WatchdogSignal": "6", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}}
+
+TASK [Enable and start kubelet] ************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Ansible_Playbook.yaml:80
+changed: [node2] => {"changed": true, "enabled": true, "name": "kubelet", "state": "started", "status": {"ActiveEnterTimestampMonotonic": "0", "ActiveExitTimestampMonotonic": "0", "ActiveState": "inactive", "After": "sysinit.target system.slice network-online.target basic.target systemd-journald.socket", "AllowIsolate": "no", "AllowedCPUs": "", "AllowedMemoryNodes": "", "AmbientCapabilities": "", "AssertResult": "no", "AssertTimestampMonotonic": "0", "Before": "multi-user.target shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "CPUAccounting": "no", "CPUAffinity": "", "CPUAffinityFromNUMA": "no", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "[not set]", "CPUUsageNSec": "[not set]", "CPUWeight": "[not set]", "CacheDirectoryMode": "0755", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read 0x26 0x27 0x28", "CleanResult": "success", "CollectMode": "inactive", "ConditionResult": "no", "ConditionTimestampMonotonic": "0", "ConfigurationDirectoryMode": "0755", "Conflicts": "shutdown.target", "ControlPID": "0", "DefaultDependencies": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "Delegate": "no", "Description": "kubelet: The Kubernetes Node Agent", "DevicePolicy": "auto", "Documentation": "https://kubernetes.io/docs/", "DropInPaths": "/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf", "DynamicUser": "no", "EffectiveCPUs": "", "EffectiveMemoryNodes": "", "Environment": "[unprintable] KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml", "EnvironmentFiles": "/etc/default/kubelet (ignore_errors=yes)", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/usr/bin/kubelet ; argv[]=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartEx": "{ path=/usr/bin/kubelet ; argv[]=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FinalKillSignal": "9", "FragmentPath": "/lib/systemd/system/kubelet.service", "GID": "[not set]", "GuessMainPID": "yes", "IOAccounting": "no", "IOReadBytes": "18446744073709551615", "IOReadOperations": "18446744073709551615", "IOSchedulingClass": "0", "IOSchedulingPriority": "0", "IOWeight": "[not set]", "IOWriteBytes": "18446744073709551615", "IOWriteOperations": "18446744073709551615", "IPAccounting": "no", "IPEgressBytes": "[no data]", "IPEgressPackets": "[no data]", "IPIngressBytes": "[no data]", "IPIngressPackets": "[no data]", "Id": "kubelet.service", "IgnoreOnIsolate": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestampMonotonic": "0", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "JobTimeoutUSec": "infinity", "KeyringMode": "private", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitCORE": "infinity", "LimitCORESoft": "0", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitMEMLOCK": "65536", "LimitMEMLOCKSoft": "65536", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitNOFILE": "524288", "LimitNOFILESoft": "1024", "LimitNPROC": "15573", "LimitNPROCSoft": "15573", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "LimitSIGPENDING": "15573", "LimitSIGPENDINGSoft": "15573", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LoadState": "loaded", "LockPersonality": "no", "LogLevelMax": "-1", "LogRateLimitBurst": "0", "LogRateLimitIntervalUSec": "0", "LogsDirectoryMode": "0755", "MainPID": "0", "MemoryAccounting": "yes", "MemoryCurrent": "[not set]", "MemoryDenyWriteExecute": "no", "MemoryHigh": "infinity", "MemoryLimit": "infinity", "MemoryLow": "0", "MemoryMax": "infinity", "MemoryMin": "0", "MemorySwapMax": "infinity", "MountAPIVFS": "no", "MountFlags": "", "NFileDescriptorStore": "0", "NRestarts": "0", "NUMAMask": "", "NUMAPolicy": "n/a", "Names": "kubelet.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMPolicy": "stop", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "Perpetual": "no", "PrivateDevices": "no", "PrivateMounts": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "PrivateUsers": "no", "ProtectControlGroups": "no", "ProtectHome": "no", "ProtectHostname": "no", "ProtectKernelLogs": "no", "ProtectKernelModules": "no", "ProtectKernelTunables": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "ReloadResult": "success", "RemainAfterExit": "no", "RemoveIPC": "no", "Requires": "system.slice sysinit.target", "Restart": "always", "RestartKillSignal": "15", "RestartUSec": "10s", "RestrictNamespaces": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "RuntimeDirectoryPreserve": "no", "RuntimeMaxUSec": "infinity", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardInputData": "", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitIntervalUSec": "0", "StartupBlockIOWeight": "[not set]", "StartupCPUShares": "[not set]", "StartupCPUWeight": "[not set]", "StartupIOWeight": "[not set]", "StateChangeTimestampMonotonic": "0", "StateDirectoryMode": "0755", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "dead", "SuccessAction": "none", "SyslogFacility": "3", "SyslogLevel": "6", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TasksAccounting": "yes", "TasksCurrent": "[not set]", "TasksMax": "4671", "TimeoutAbortUSec": "1min 30s", "TimeoutCleanUSec": "infinity", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "simple", "UID": "[not set]", "UMask": "0022", "UnitFilePreset": "enabled", "UnitFileState": "enabled", "UtmpMode": "init", "WantedBy": "multi-user.target", "Wants": "network-online.target", "WatchdogSignal": "6", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}}
+changed: [node1] => {"changed": true, "enabled": true, "name": "kubelet", "state": "started", "status": {"ActiveEnterTimestampMonotonic": "0", "ActiveExitTimestampMonotonic": "0", "ActiveState": "inactive", "After": "network-online.target basic.target sysinit.target systemd-journald.socket system.slice", "AllowIsolate": "no", "AllowedCPUs": "", "AllowedMemoryNodes": "", "AmbientCapabilities": "", "AssertResult": "no", "AssertTimestampMonotonic": "0", "Before": "shutdown.target multi-user.target", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "CPUAccounting": "no", "CPUAffinity": "", "CPUAffinityFromNUMA": "no", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "[not set]", "CPUUsageNSec": "[not set]", "CPUWeight": "[not set]", "CacheDirectoryMode": "0755", "CanIsolate": "no", "CanReload": "no", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read 0x26 0x27 0x28", "CleanResult": "success", "CollectMode": "inactive", "ConditionResult": "no", "ConditionTimestampMonotonic": "0", "ConfigurationDirectoryMode": "0755", "Conflicts": "shutdown.target", "ControlPID": "0", "DefaultDependencies": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "Delegate": "no", "Description": "kubelet: The Kubernetes Node Agent", "DevicePolicy": "auto", "Documentation": "https://kubernetes.io/docs/", "DropInPaths": "/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf", "DynamicUser": "no", "EffectiveCPUs": "", "EffectiveMemoryNodes": "", "Environment": "[unprintable] KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml", "EnvironmentFiles": "/etc/default/kubelet (ignore_errors=yes)", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "0", "ExecMainStartTimestampMonotonic": "0", "ExecMainStatus": "0", "ExecStart": "{ path=/usr/bin/kubelet ; argv[]=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartEx": "{ path=/usr/bin/kubelet ; argv[]=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FinalKillSignal": "9", "FragmentPath": "/lib/systemd/system/kubelet.service", "GID": "[not set]", "GuessMainPID": "yes", "IOAccounting": "no", "IOReadBytes": "18446744073709551615", "IOReadOperations": "18446744073709551615", "IOSchedulingClass": "0", "IOSchedulingPriority": "0", "IOWeight": "[not set]", "IOWriteBytes": "18446744073709551615", "IOWriteOperations": "18446744073709551615", "IPAccounting": "no", "IPEgressBytes": "[no data]", "IPEgressPackets": "[no data]", "IPIngressBytes": "[no data]", "IPIngressPackets": "[no data]", "Id": "kubelet.service", "IgnoreOnIsolate": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestampMonotonic": "0", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "JobTimeoutUSec": "infinity", "KeyringMode": "private", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitCORE": "infinity", "LimitCORESoft": "0", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitMEMLOCK": "65536", "LimitMEMLOCKSoft": "65536", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitNOFILE": "524288", "LimitNOFILESoft": "1024", "LimitNPROC": "15573", "LimitNPROCSoft": "15573", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "LimitSIGPENDING": "15573", "LimitSIGPENDINGSoft": "15573", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LoadState": "loaded", "LockPersonality": "no", "LogLevelMax": "-1", "LogRateLimitBurst": "0", "LogRateLimitIntervalUSec": "0", "LogsDirectoryMode": "0755", "MainPID": "0", "MemoryAccounting": "yes", "MemoryCurrent": "[not set]", "MemoryDenyWriteExecute": "no", "MemoryHigh": "infinity", "MemoryLimit": "infinity", "MemoryLow": "0", "MemoryMax": "infinity", "MemoryMin": "0", "MemorySwapMax": "infinity", "MountAPIVFS": "no", "MountFlags": "", "NFileDescriptorStore": "0", "NRestarts": "0", "NUMAMask": "", "NUMAPolicy": "n/a", "Names": "kubelet.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMPolicy": "stop", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "Perpetual": "no", "PrivateDevices": "no", "PrivateMounts": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "PrivateUsers": "no", "ProtectControlGroups": "no", "ProtectHome": "no", "ProtectHostname": "no", "ProtectKernelLogs": "no", "ProtectKernelModules": "no", "ProtectKernelTunables": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "ReloadResult": "success", "RemainAfterExit": "no", "RemoveIPC": "no", "Requires": "sysinit.target system.slice", "Restart": "always", "RestartKillSignal": "15", "RestartUSec": "10s", "RestrictNamespaces": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "RuntimeDirectoryPreserve": "no", "RuntimeMaxUSec": "infinity", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardInputData": "", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitIntervalUSec": "0", "StartupBlockIOWeight": "[not set]", "StartupCPUShares": "[not set]", "StartupCPUWeight": "[not set]", "StartupIOWeight": "[not set]", "StateChangeTimestampMonotonic": "0", "StateDirectoryMode": "0755", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "dead", "SuccessAction": "none", "SyslogFacility": "3", "SyslogLevel": "6", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TasksAccounting": "yes", "TasksCurrent": "[not set]", "TasksMax": "4671", "TimeoutAbortUSec": "1min 30s", "TimeoutCleanUSec": "infinity", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "simple", "UID": "[not set]", "UMask": "0022", "UnitFilePreset": "enabled", "UnitFileState": "enabled", "UtmpMode": "init", "WantedBy": "multi-user.target", "Wants": "network-online.target", "WatchdogSignal": "6", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP *********************************************************************
+node1                      : ok=14   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+node2                      : ok=12   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Kubernetes Tasks)
+[Pipeline] sh
++ ansible-playbook -vv -i inventory.yaml Kubernetes_Playbook.yaml --private-key=/home/elmerlakanilawy/CapstoneProject/ERCLI-CEP2/ERCLI_CEP2_Key.pem -e httpPort=8989 -e containerName=ercli-bankingapp-cep2 -e dockerImageTag=lakanilaw/ercli-bankingapp-cep2:1
+ansible-playbook [core 2.12.1]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/var/lib/jenkins/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /var/lib/jenkins/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.10 (default, Nov 22 2023, 10:22:35) [GCC 9.4.0]
+  jinja version = 2.10.1
+  libyaml = True
+Using /etc/ansible/ansible.cfg as config file
+Skipping callback 'default', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+
+PLAYBOOK: Kubernetes_Playbook.yaml *********************************************
+3 plays in Kubernetes_Playbook.yaml
+
+PLAY [Kubernetes Master Node Initialization] ***********************************
+
+TASK [Gathering Facts] *********************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:1
+ok: [node1]
+META: ran handlers
+
+TASK [Initialize Kubernetes] ***************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:6
+changed: [node1] => {"changed": true, "cmd": ["kubeadm", "init"], "delta": "0:00:31.796920", "end": "2023-12-02 20:56:08.617843", "msg": "", "rc": 0, "start": "2023-12-02 20:55:36.820923", "stderr": "W1202 20:55:45.216002    4862 checks.go:835] detected that the sandbox image \"registry.k8s.io/pause:3.8\" of the container runtime is inconsistent with that used by kubeadm. It is recommended that using \"registry.k8s.io/pause:3.9\" as the CRI sandbox image.", "stderr_lines": ["W1202 20:55:45.216002    4862 checks.go:835] detected that the sandbox image \"registry.k8s.io/pause:3.8\" of the container runtime is inconsistent with that used by kubeadm. It is recommended that using \"registry.k8s.io/pause:3.9\" as the CRI sandbox image."], "stdout": "[init] Using Kubernetes version: v1.28.4\n[preflight] Running pre-flight checks\n[preflight] Pulling images required for setting up a Kubernetes cluster\n[preflight] This might take a minute or two, depending on the speed of your internet connection\n[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'\n[certs] Using certificateDir folder \"/etc/kubernetes/pki\"\n[certs] Generating \"ca\" certificate and key\n[certs] Generating \"apiserver\" certificate and key\n[certs] apiserver serving cert is signed for DNS names [ip-172-31-1-249 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 172.31.1.249]\n[certs] Generating \"apiserver-kubelet-client\" certificate and key\n[certs] Generating \"front-proxy-ca\" certificate and key\n[certs] Generating \"front-proxy-client\" certificate and key\n[certs] Generating \"etcd/ca\" certificate and key\n[certs] Generating \"etcd/server\" certificate and key\n[certs] etcd/server serving cert is signed for DNS names [ip-172-31-1-249 localhost] and IPs [172.31.1.249 127.0.0.1 ::1]\n[certs] Generating \"etcd/peer\" certificate and key\n[certs] etcd/peer serving cert is signed for DNS names [ip-172-31-1-249 localhost] and IPs [172.31.1.249 127.0.0.1 ::1]\n[certs] Generating \"etcd/healthcheck-client\" certificate and key\n[certs] Generating \"apiserver-etcd-client\" certificate and key\n[certs] Generating \"sa\" key and public key\n[kubeconfig] Using kubeconfig folder \"/etc/kubernetes\"\n[kubeconfig] Writing \"admin.conf\" kubeconfig file\n[kubeconfig] Writing \"kubelet.conf\" kubeconfig file\n[kubeconfig] Writing \"controller-manager.conf\" kubeconfig file\n[kubeconfig] Writing \"scheduler.conf\" kubeconfig file\n[etcd] Creating static Pod manifest for local etcd in \"/etc/kubernetes/manifests\"\n[control-plane] Using manifest folder \"/etc/kubernetes/manifests\"\n[control-plane] Creating static Pod manifest for \"kube-apiserver\"\n[control-plane] Creating static Pod manifest for \"kube-controller-manager\"\n[control-plane] Creating static Pod manifest for \"kube-scheduler\"\n[kubelet-start] Writing kubelet environment file with flags to file \"/var/lib/kubelet/kubeadm-flags.env\"\n[kubelet-start] Writing kubelet configuration to file \"/var/lib/kubelet/config.yaml\"\n[kubelet-start] Starting the kubelet\n[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory \"/etc/kubernetes/manifests\". This can take up to 4m0s\n[apiclient] All control plane components are healthy after 7.501967 seconds\n[upload-config] Storing the configuration used in ConfigMap \"kubeadm-config\" in the \"kube-system\" Namespace\n[kubelet] Creating a ConfigMap \"kubelet-config\" in namespace kube-system with the configuration for the kubelets in the cluster\n[upload-certs] Skipping phase. Please see --upload-certs\n[mark-control-plane] Marking the node ip-172-31-1-249 as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]\n[mark-control-plane] Marking the node ip-172-31-1-249 as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]\n[bootstrap-token] Using token: a5be53.29p7rvf1wqu26wvd\n[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles\n[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to get nodes\n[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials\n[bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token\n[bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster\n[bootstrap-token] Creating the \"cluster-info\" ConfigMap in the \"kube-public\" namespace\n[kubelet-finalize] Updating \"/etc/kubernetes/kubelet.conf\" to point to a rotatable kubelet client certificate and key\n[addons] Applied essential addon: CoreDNS\n[addons] Applied essential addon: kube-proxy\n\nYour Kubernetes control-plane has initialized successfully!\n\nTo start using your cluster, you need to run the following as a regular user:\n\n  mkdir -p $HOME/.kube\n  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config\n  sudo chown $(id -u):$(id -g) $HOME/.kube/config\n\nAlternatively, if you are the root user, you can run:\n\n  export KUBECONFIG=/etc/kubernetes/admin.conf\n\nYou should now deploy a pod network to the cluster.\nRun \"kubectl apply -f [podnetwork].yaml\" with one of the options listed at:\n  https://kubernetes.io/docs/concepts/cluster-administration/addons/\n\nThen you can join any number of worker nodes by running the following on each as root:\n\nkubeadm join 172.31.1.249:6443 --token a5be53.29p7rvf1wqu26wvd \\\n\t--discovery-token-ca-cert-hash sha256:5004b7ee857098d7b81950de158d47450a5b8d732ffb178e94c48f611dd58cdd ", "stdout_lines": ["[init] Using Kubernetes version: v1.28.4", "[preflight] Running pre-flight checks", "[preflight] Pulling images required for setting up a Kubernetes cluster", "[preflight] This might take a minute or two, depending on the speed of your internet connection", "[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'", "[certs] Using certificateDir folder \"/etc/kubernetes/pki\"", "[certs] Generating \"ca\" certificate and key", "[certs] Generating \"apiserver\" certificate and key", "[certs] apiserver serving cert is signed for DNS names [ip-172-31-1-249 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 172.31.1.249]", "[certs] Generating \"apiserver-kubelet-client\" certificate and key", "[certs] Generating \"front-proxy-ca\" certificate and key", "[certs] Generating \"front-proxy-client\" certificate and key", "[certs] Generating \"etcd/ca\" certificate and key", "[certs] Generating \"etcd/server\" certificate and key", "[certs] etcd/server serving cert is signed for DNS names [ip-172-31-1-249 localhost] and IPs [172.31.1.249 127.0.0.1 ::1]", "[certs] Generating \"etcd/peer\" certificate and key", "[certs] etcd/peer serving cert is signed for DNS names [ip-172-31-1-249 localhost] and IPs [172.31.1.249 127.0.0.1 ::1]", "[certs] Generating \"etcd/healthcheck-client\" certificate and key", "[certs] Generating \"apiserver-etcd-client\" certificate and key", "[certs] Generating \"sa\" key and public key", "[kubeconfig] Using kubeconfig folder \"/etc/kubernetes\"", "[kubeconfig] Writing \"admin.conf\" kubeconfig file", "[kubeconfig] Writing \"kubelet.conf\" kubeconfig file", "[kubeconfig] Writing \"controller-manager.conf\" kubeconfig file", "[kubeconfig] Writing \"scheduler.conf\" kubeconfig file", "[etcd] Creating static Pod manifest for local etcd in \"/etc/kubernetes/manifests\"", "[control-plane] Using manifest folder \"/etc/kubernetes/manifests\"", "[control-plane] Creating static Pod manifest for \"kube-apiserver\"", "[control-plane] Creating static Pod manifest for \"kube-controller-manager\"", "[control-plane] Creating static Pod manifest for \"kube-scheduler\"", "[kubelet-start] Writing kubelet environment file with flags to file \"/var/lib/kubelet/kubeadm-flags.env\"", "[kubelet-start] Writing kubelet configuration to file \"/var/lib/kubelet/config.yaml\"", "[kubelet-start] Starting the kubelet", "[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory \"/etc/kubernetes/manifests\". This can take up to 4m0s", "[apiclient] All control plane components are healthy after 7.501967 seconds", "[upload-config] Storing the configuration used in ConfigMap \"kubeadm-config\" in the \"kube-system\" Namespace", "[kubelet] Creating a ConfigMap \"kubelet-config\" in namespace kube-system with the configuration for the kubelets in the cluster", "[upload-certs] Skipping phase. Please see --upload-certs", "[mark-control-plane] Marking the node ip-172-31-1-249 as control-plane by adding the labels: [node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]", "[mark-control-plane] Marking the node ip-172-31-1-249 as control-plane by adding the taints [node-role.kubernetes.io/control-plane:NoSchedule]", "[bootstrap-token] Using token: a5be53.29p7rvf1wqu26wvd", "[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles", "[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to get nodes", "[bootstrap-token] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials", "[bootstrap-token] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token", "[bootstrap-token] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster", "[bootstrap-token] Creating the \"cluster-info\" ConfigMap in the \"kube-public\" namespace", "[kubelet-finalize] Updating \"/etc/kubernetes/kubelet.conf\" to point to a rotatable kubelet client certificate and key", "[addons] Applied essential addon: CoreDNS", "[addons] Applied essential addon: kube-proxy", "", "Your Kubernetes control-plane has initialized successfully!", "", "To start using your cluster, you need to run the following as a regular user:", "", "  mkdir -p $HOME/.kube", "  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config", "  sudo chown $(id -u):$(id -g) $HOME/.kube/config", "", "Alternatively, if you are the root user, you can run:", "", "  export KUBECONFIG=/etc/kubernetes/admin.conf", "", "You should now deploy a pod network to the cluster.", "Run \"kubectl apply -f [podnetwork].yaml\" with one of the options listed at:", "  https://kubernetes.io/docs/concepts/cluster-administration/addons/", "", "Then you can join any number of worker nodes by running the following on each as root:", "", "kubeadm join 172.31.1.249:6443 --token a5be53.29p7rvf1wqu26wvd \\", "\t--discovery-token-ca-cert-hash sha256:5004b7ee857098d7b81950de158d47450a5b8d732ffb178e94c48f611dd58cdd "]}
+
+TASK [Check if kubeadm init was successful] ************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:10
+skipping: [node1] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [Create .kube directory] **************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:15
+changed: [node1] => {"changed": true, "gid": 0, "group": "root", "mode": "0755", "owner": "root", "path": "/root/.kube", "size": 4096, "state": "directory", "uid": 0}
+
+TASK [Copy admin.conf to .kube/config] *****************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:21
+changed: [node1] => {"changed": true, "cmd": ["sudo", "cp", "-i", "/etc/kubernetes/admin.conf", "/root/.kube/config"], "delta": "0:00:00.015814", "end": "2023-12-02 20:56:09.454127", "msg": "", "rc": 0, "start": "2023-12-02 20:56:09.438313", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+TASK [Change ownership of .kube/config] ****************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:24
+changed: [node1] => {"changed": true, "cmd": ["sudo", "chown", "root:root", "/root/.kube/config"], "delta": "0:00:00.012519", "end": "2023-12-02 20:56:09.765230", "msg": "", "rc": 0, "start": "2023-12-02 20:56:09.752711", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+TASK [Install Container Network Interface (CNI)] *******************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:27
+changed: [node1] => {"changed": true, "cmd": "sudo kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml", "delta": "0:00:01.879970", "end": "2023-12-02 20:56:11.955160", "msg": "", "rc": 0, "start": "2023-12-02 20:56:10.075190", "stderr": "", "stderr_lines": [], "stdout": "poddisruptionbudget.policy/calico-kube-controllers created\nserviceaccount/calico-kube-controllers created\nserviceaccount/calico-node created\nconfigmap/calico-config created\ncustomresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created\ncustomresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created\nclusterrole.rbac.authorization.k8s.io/calico-kube-controllers created\nclusterrole.rbac.authorization.k8s.io/calico-node created\nclusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers created\nclusterrolebinding.rbac.authorization.k8s.io/calico-node created\ndaemonset.apps/calico-node created\ndeployment.apps/calico-kube-controllers created", "stdout_lines": ["poddisruptionbudget.policy/calico-kube-controllers created", "serviceaccount/calico-kube-controllers created", "serviceaccount/calico-node created", "configmap/calico-config created", "customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created", "customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created", "clusterrole.rbac.authorization.k8s.io/calico-kube-controllers created", "clusterrole.rbac.authorization.k8s.io/calico-node created", "clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers created", "clusterrolebinding.rbac.authorization.k8s.io/calico-node created", "daemonset.apps/calico-node created", "deployment.apps/calico-kube-controllers created"]}
+META: ran handlers
+META: ran handlers
+
+PLAY [Kubernetes Worker Node Join] *********************************************
+
+TASK [Gathering Facts] *********************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:30
+ok: [node2]
+META: ran handlers
+
+TASK [Get kubeadm join command from master] ************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:35
+changed: [node2 -> node1(34.205.246.185)] => {"changed": true, "cmd": "sudo kubeadm token create --print-join-command", "delta": "0:00:00.136901", "end": "2023-12-02 20:56:13.572913", "msg": "", "rc": 0, "start": "2023-12-02 20:56:13.436012", "stderr": "", "stderr_lines": [], "stdout": "kubeadm join 172.31.1.249:6443 --token 7nt30z.zxr3lccu77xqai8i --discovery-token-ca-cert-hash sha256:5004b7ee857098d7b81950de158d47450a5b8d732ffb178e94c48f611dd58cdd ", "stdout_lines": ["kubeadm join 172.31.1.249:6443 --token 7nt30z.zxr3lccu77xqai8i --discovery-token-ca-cert-hash sha256:5004b7ee857098d7b81950de158d47450a5b8d732ffb178e94c48f611dd58cdd "]}
+
+TASK [Execute kubeadm join command] ********************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:40
+changed: [node2] => {"changed": true, "cmd": "kubeadm join 172.31.1.249:6443 --token 7nt30z.zxr3lccu77xqai8i --discovery-token-ca-cert-hash sha256:5004b7ee857098d7b81950de158d47450a5b8d732ffb178e94c48f611dd58cdd ", "delta": "0:00:03.502329", "end": "2023-12-02 20:56:17.382924", "msg": "", "rc": 0, "start": "2023-12-02 20:56:13.880595", "stderr": "", "stderr_lines": [], "stdout": "[preflight] Running pre-flight checks\n[preflight] Reading configuration from the cluster...\n[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'\n[kubelet-start] Writing kubelet configuration to file \"/var/lib/kubelet/config.yaml\"\n[kubelet-start] Writing kubelet environment file with flags to file \"/var/lib/kubelet/kubeadm-flags.env\"\n[kubelet-start] Starting the kubelet\n[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...\n\nThis node has joined the cluster:\n* Certificate signing request was sent to apiserver and a response was received.\n* The Kubelet was informed of the new secure connection details.\n\nRun 'kubectl get nodes' on the control-plane to see this node join the cluster.", "stdout_lines": ["[preflight] Running pre-flight checks", "[preflight] Reading configuration from the cluster...", "[preflight] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -o yaml'", "[kubelet-start] Writing kubelet configuration to file \"/var/lib/kubelet/config.yaml\"", "[kubelet-start] Writing kubelet environment file with flags to file \"/var/lib/kubelet/kubeadm-flags.env\"", "[kubelet-start] Starting the kubelet", "[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...", "", "This node has joined the cluster:", "* Certificate signing request was sent to apiserver and a response was received.", "* The Kubelet was informed of the new secure connection details.", "", "Run 'kubectl get nodes' on the control-plane to see this node join the cluster."]}
+
+TASK [Check if kubeadm join was successful] ************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:44
+skipping: [node2] => {"changed": false, "skip_reason": "Conditional result was False"}
+
+TASK [Wait for node to join] ***************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:49
+ok: [node2] => {"changed": false, "elapsed": 60, "match_groupdict": {}, "match_groups": [], "path": null, "port": null, "search_regex": null, "state": "started"}
+
+TASK [Check node status] *******************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:53
+changed: [node2 -> node1(34.205.246.185)] => {"changed": true, "cmd": "sudo kubectl get nodes -o wide", "delta": "0:00:00.100016", "end": "2023-12-02 20:57:19.145612", "msg": "", "rc": 0, "start": "2023-12-02 20:57:19.045596", "stderr": "", "stderr_lines": [], "stdout": "NAME              STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION    CONTAINER-RUNTIME\nip-172-31-1-249   Ready    control-plane   74s   v1.28.4   172.31.1.249   <none>        Ubuntu 20.04.6 LTS   5.15.0-1048-aws   containerd://1.7.2\nip-172-31-2-199   Ready    <none>          62s   v1.28.4   172.31.2.199   <none>        Ubuntu 20.04.6 LTS   5.15.0-1048-aws   containerd://1.7.2", "stdout_lines": ["NAME              STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION    CONTAINER-RUNTIME", "ip-172-31-1-249   Ready    control-plane   74s   v1.28.4   172.31.1.249   <none>        Ubuntu 20.04.6 LTS   5.15.0-1048-aws   containerd://1.7.2", "ip-172-31-2-199   Ready    <none>          62s   v1.28.4   172.31.2.199   <none>        Ubuntu 20.04.6 LTS   5.15.0-1048-aws   containerd://1.7.2"]}
+
+TASK [Fail if node is not ready] ***********************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:58
+skipping: [node2] => {"changed": false, "skip_reason": "Conditional result was False"}
+META: ran handlers
+META: ran handlers
+
+PLAY [Deployment of Docker Container Image via Kubernetes] *********************
+
+TASK [Gathering Facts] *********************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:63
+ok: [node1]
+META: ran handlers
+
+TASK [Remove Existing Container] ***********************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:68
+fatal: [node1]: FAILED! => {"changed": true, "cmd": ["kubectl", "delete", "deployment", "ercli-bankingapp-cep2"], "delta": "0:00:00.083009", "end": "2023-12-02 20:57:20.841858", "msg": "non-zero return code", "rc": 1, "start": "2023-12-02 20:57:20.758849", "stderr": "Error from server (NotFound): deployments.apps \"ercli-bankingapp-cep2\" not found", "stderr_lines": ["Error from server (NotFound): deployments.apps \"ercli-bankingapp-cep2\" not found"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+TASK [Create Deployment of lakanilaw/ercli-bankingapp-cep2:1] ******************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:72
+changed: [node1] => {"changed": true, "cmd": ["kubectl", "create", "deployment", "ercli-bankingapp-cep2", "--image=docker.io/lakanilaw/ercli-bankingapp-cep2:1"], "delta": "0:00:00.081432", "end": "2023-12-02 20:57:21.232838", "msg": "", "rc": 0, "start": "2023-12-02 20:57:21.151406", "stderr": "", "stderr_lines": [], "stdout": "deployment.apps/ercli-bankingapp-cep2 created", "stdout_lines": ["deployment.apps/ercli-bankingapp-cep2 created"]}
+
+TASK [Expose Deployment] *******************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:75
+changed: [node1] => {"changed": true, "cmd": ["kubectl", "expose", "deployment", "ercli-bankingapp-cep2", "--type=LoadBalancer", "--port=8989", "--target-port=8989"], "delta": "0:00:00.098560", "end": "2023-12-02 20:57:21.685793", "msg": "", "rc": 0, "start": "2023-12-02 20:57:21.587233", "stderr": "", "stderr_lines": [], "stdout": "service/ercli-bankingapp-cep2 exposed", "stdout_lines": ["service/ercli-bankingapp-cep2 exposed"]}
+
+TASK [Get Container List] ******************************************************
+task path: /var/lib/jenkins/workspace/ERCLI-CapstoneProject-CEP2/Kubernetes_Playbook.yaml:78
+changed: [node1] => {"changed": true, "cmd": ["kubectl", "get", "pods", "-o", "wide"], "delta": "0:00:00.079153", "end": "2023-12-02 20:57:22.083008", "msg": "", "rc": 0, "start": "2023-12-02 20:57:22.003855", "stderr": "", "stderr_lines": [], "stdout": "NAME                                    READY   STATUS              RESTARTS   AGE   IP       NODE              NOMINATED NODE   READINESS GATES\nercli-bankingapp-cep2-5d569b956-ggxnc   0/1     ContainerCreating   0          1s    <none>   ip-172-31-2-199   <none>           <none>", "stdout_lines": ["NAME                                    READY   STATUS              RESTARTS   AGE   IP       NODE              NOMINATED NODE   READINESS GATES", "ercli-bankingapp-cep2-5d569b956-ggxnc   0/1     ContainerCreating   0          1s    <none>   ip-172-31-2-199   <none>           <none>"]}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP *********************************************************************
+node1                      : ok=11   changed=9    unreachable=0    failed=0    skipped=1    rescued=0    ignored=1   
+node2                      : ok=5    changed=3    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
